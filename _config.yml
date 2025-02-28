@@ -1,8 +1,9 @@
-title: My GitHub Page
-description: This is my personal website.
+title: AOM SQL
+description: Spletna stran namenjena pisanju o prigodah na nivoju SQL Server.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jkeskuel.github.io" # the base hostname & protocol for your site
-theme: minima
+remote_theme: pages-themes/tactile@v0.2.0
+
 
 # Build settings
 markdown: kramdown
@@ -21,3 +22,4 @@ social:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
