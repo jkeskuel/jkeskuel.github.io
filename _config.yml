@@ -1,0 +1,23 @@
+title: My GitHub Page
+description: This is my personal website.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://jkeskuel.github.io" # the base hostname & protocol for your site
+theme: minima
+
+# Build settings
+markdown: kramdown
+
+# Author settings
+author:
+  name: Jure Kranjc
+  email: jure.kranjc@aom.si
+
+# Social links
+social:
+  linkedin: jkeskuel
+  github: jkeskuel
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
