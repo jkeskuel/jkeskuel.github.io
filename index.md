@@ -1,6 +1,5 @@
 ---
-layout: home
-title: "Jure Kranjc"
+title: "About"
 author_profile: true
 ---
 
