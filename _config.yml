@@ -1,5 +1,5 @@
 title: AOM SQL
-description: Spletna stran namenjena pisanju o prigodah na nivoju SQL Server.
+description: Spletna stran namenjena pisanju o prigodah z "bazami".
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jkeskuel.github.io" # the base hostname & protocol for your site
 remote_theme: pages-themes/tactile@v0.2.0
