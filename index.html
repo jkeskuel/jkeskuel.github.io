@@ -76,42 +76,29 @@
 						<!-- Reference -->
 							<article id="about">
 								<h2 class="major">Reference</h2>
+								<p>Nekaj izpostavljenih referenčnih projektov na področju podatkovnih baz vključuje nadgradnje sistemov, optimizacijo zmogljivosti, načrtovanje skalabilnih arhitektur ter implementacijo visoko razpoložljivih in hibridnih rešitev.</p>
 								<!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
-								
-									<img src="images/mikrocop_logo.svg" alt="Mikrocop Logo" style="height: 30px; vertical-align: middle;">								
-									<ul>
-										<li>Selitev podatkovnih zbirk na najnovejšo različico SQL Server</li>
-										<li>Optimizacija poizvedb in kode</li>
-										<li>Načrtovanje skalabilnosti s simulacijo obremenitev</li>
-										<li>Optimizacija podatkovnih shem</li>
-									</ul>
-								
-									<img src="images/ELES-logo.png" alt="ELES Logo" style="height: 30px; vertical-align: middle;">									
-									<ul>
-										<li>Vzdrževanje, nadgradnja in konsolidacija SQL okolij</li>
-										<li>Implementacija HA/DR rešitev</li>
-										<li>Svetovanje</li>
-									</ul>
-								
-									<img src="images/MORS-logo.jpg" alt="MORS Logo" style="height: 30px; vertical-align: middle;">								
-									<ul>
-										<li>Postavitev in selitev 40 TB podatkovnih baz iz fizičnega SQL clustra na SQL virtualiziran cluster</li>
-										<li>Virtualizacija obstoječih strežnikov</li>
-										<li>Selitev podatkovnih baz na nov SAN sistem</li>
-									</ul>
-								
-									<img src="images/FURS-logo.png" alt="FURS logo" style="height: 30px; vertical-align: middle;">
-									<ul>
-										<li>Selitev in optimizacija podatkovnih strežnikov</li>
-										<li>Svetovanje pri razvoju aplikacij</li>
-										<li>Optimizacija podatkovnih tokov</li>
-									</ul>
-								</article>
+								<div style="display: flex; align-items: center; margin-bottom: 20px;">
+									<img src="images/mikrocop_logo.svg" alt="Mikrocop Logo" style="width: 15%; max-width: 100px; margin-right: 15px;">
+									<p style="flex: 1;">Arhitekturno svetovanje in izvedba optimizacij za skalabilnost in performančno optimizacijo podatkovnih baz.</p>
+								</div>
+								<div style="display: flex; align-items: center; margin-bottom: 20px;">
+									<img src="images/ELES-logo.png" alt="ELES Logo" style="width: 15%; max-width: 100px; margin-right: 15px;">
+									<p style="flex: 1;">Migracije na novejše verzije SQL Server in implementacija visoko razpoložljivih podatkovnih okolij.</p>
+								</div>
+								<div style="display: flex; align-items: center; margin-bottom: 20px;">
+									<img src="images/MORS-logo.jpg" alt="MORS Logo" style="width: 15%; max-width: 100px; margin-right: 15px;">
+									<p style="flex: 1;">Migracija podatkovnih baz na nova diskovna polja in virtualizacija SQL Server okolja.</p>
+								</div>
+								<div style="display: flex; align-items: center; margin-bottom: 20px;">
+									<img src="images/FURS-logo.png" alt="FURS logo" style="width: 15%; max-width: 100px; margin-right: 15px;">
+									<p style="flex: 1;">Performančne optimizacije na strežniškem in kodnem nivoju.</p>
+								</div>
+							</article>
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Kontakt</h2>
 								<!-- Load EmailJS SDK -->
-			<!-- Load EmailJS SDK -->
 								<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 								<script>
 								(function(){
@@ -145,6 +132,10 @@
 								<script>
 								document.getElementById("contact-form").addEventListener("submit", function(event) {
 									event.preventDefault();
+
+									const formData = new FormData(this);
+									formData.append("from_name", document.getElementById("name").value);
+									formData.append("reply_to", document.getElementById("email").value);
 
 									emailjs.sendForm("service_qg0k0um", "template_jc2723j", this)
 									.then(() => {
