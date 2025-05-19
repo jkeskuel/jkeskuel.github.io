@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://aom.si/sitemap.xml
