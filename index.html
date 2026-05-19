@@ -1,466 +1,165 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>AOM SQL - Database Consulting</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Expert SQL Server consulting specializing in performance tuning, high availability, migrations, and enterprise database optimization." />
-		<meta name="author" content="Jure Kranjc" />
-		<meta name="robots" content="index, follow" />
-		<meta name="googlebot" content="index, follow" />
-		<meta property="og:title" content="AOM SQL - Enterprise Database Consulting">
-		<meta property="og:description" content="SQL Server specialist focused on performance, reliability, and cost optimization.">
-		<meta property="og:url" content="https://www.aom.si">
-		<meta name="twitter:card" content="summary_large_image">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="/images/favicon.png" type="image/png">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-<!-- Google tag (gtag.js) -->
+<head>
+	<meta charset="utf-8" />
+	<title>Jure Kranjc — AOM SQL</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Independent SQL Server consultant. Performance, high availability, migrations — done without the corporate theatre." />
+	<meta name="author" content="Jure Kranjc" />
+	<meta property="og:title" content="Jure Kranjc — AOM SQL">
+	<meta property="og:description" content="Independent SQL Server consultant. Performance, HA, migrations.">
+	<meta property="og:url" content="https://www.aom.si">
+	<meta name="twitter:card" content="summary">
+	<link rel="icon" href="/images/favicon.png" type="image/png">
+	<link rel="stylesheet" href="assets/css/site.css">
+
+	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBENTHRG3T"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'G-YBENTHRG3T');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-YBENTHRG3T');
 	</script>
-	<body class="is-preload">
+</head>
+<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Header -->
-					<header id="header">				
-						<div class="content">
-							<div class="inner">
-								<h1>Jure Kranjc</h1>
-								<p>Making databases fast, reliable, and boring.</p>
-																			
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">About</a></li>
-								<li><a href="#work">Services</a></li>
-								<!--<li><a href="#about">Portfolio</a></li>-->
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+	<header class="site">
+		<div class="wrap">
+			<a class="brand" href="/">Jure Kranjc</a>
+			<nav>
+				<a href="#about">About</a>
+				<a href="#services">Services</a>
+				<a href="#notes">Notes</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</div>
+	</header>
 
-				<!-- Main -->
-					<div id="main">
+	<section class="hero">
+		<div class="wrap">
+			<h1>Making databases fast, reliable, and boring.</h1>
+			<p class="lede">Independent SQL Server consultant based in Slovenia. I help teams keep their data layer out of the way of everything else.</p>
+		</div>
+	</section>
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">About</h2>
-								<style>
-									.profile-wrapper {
-									  overflow: hidden;
-									}
-								  
-									.profile-photo {
-									  float: left;
-									  width: 150px;
-									  height: 150px;
-									  border-radius: 50%;
-									  object-fit: cover;
-									  margin: 0 20px 10px 0;
-									}
-								  </style>
-								  
-								  <div class="profile-wrapper">
-									<img src="images/JureKranjc.png" alt="Jure Kranjc" class="profile-photo">
-								  
-									<p>I'm Jure Kranjc, an independent database consultant specializing in SQL Server with extensive experience across corporate and enterprise environments. I deliver honest, professional solutions with a personal touch to every engagement.</p>
-						
-									<p>My clients range from government institutions to private enterprises, where I architect and optimize highly available, efficient, and high-performance database systems that support critical business operations.</p>
-
-								  </div>
-								  
-								<h3>Certifications</h3>
-								<ul>
-									<li><strong><a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url">MCSE: Data Management and Analytics</a></strong></li>
-									<li><strong><a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url">MCSA: SQL Server 2016</a></strong></li>
-									<li><strong><a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url">Oracle Certified Professional 19c</a></strong></li>
-									<li><strong><a href="https://www.credly.com/badges/4c163d16-5163-489d-90fd-3ebca84122a4/public_url">Microsoft Certified: Azure Data Engineer Associate</a></strong></li>
-								</ul>
-								<p>View examples of <a href="#about">successfully completed projects</a>.</p>
-							</article>
-
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Services</h2>
-								<!-- <span class="image main"><img src="images/pic02.jpg" alt="" /></span>-->
-								<p>Core database consulting services:</p>
-								<ul>
-									<li><strong>High Availability & Disaster Recovery:</strong> Design, implementation, and management of enterprise SQL Server HA/DR solutions</li>
-									<li><strong>Database Migrations:</strong> Server consolidations, virtualization projects, and platform migrations with zero-downtime strategies</li>
-									<li><strong>Performance Optimization:</strong> Query tuning, schema optimization, and application code improvements for maximum efficiency</li>
-									<li><strong>Cost Optimization:</strong> Licensing analysis, resource right-sizing, and architectural recommendations to reduce total cost of ownership</li>
-									<li><strong>Development Consulting:</strong> Expert guidance for data-intensive application development and database design best practices</li>
-									<li><strong>DevOps & CI/CD:</strong> Database deployment automation, version control integration, and continuous delivery pipelines</li>
-									<li><strong>Training & Mentoring:</strong> Knowledge transfer programs for individuals and teams to build internal database expertise</li>
-								</ul>					
-							</article>
-					
-						
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<!-- Load EmailJS SDK -->
-								<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-								<script>
-								(function(){
-									emailjs.init("T491ObZb_kHykk6_M");
-								})();
-								</script>
-
-								<!-- Contact Form -->
-								<form id="contact-form">
-								<div class="fields">
-									<div class="field half">
-									<label for="name">Name</label>
-									<input type="text" name="from_name" id="name" required />
-									</div>
-									<div class="field half">
-									<label for="email">Email</label>
-									<input type="email" name="reply_to" id="email" required />
-									</div>
-									<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="4" required></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="primary" /></li>
-									<li><input type="reset" value="Clear" /></li>
-								</ul>
-								</form>
-
-								<!-- Form submission script -->
-								<script>
-								document.getElementById("contact-form").addEventListener("submit", function(event) {
-									event.preventDefault();
-
-									const formData = new FormData(this);
-									formData.append("from_name", document.getElementById("name").value);
-									formData.append("reply_to", document.getElementById("email").value);
-
-									emailjs.sendForm("service_qg0k0um", "template_jc2723j", this)
-									.then(() => {
-										alert("Message sent successfully! Thank you for reaching out.");
-										this.reset();
-									}, (error) => {
-										console.error("EmailJS error:", error);
-										alert("Error sending message. Please try again or contact directly via email.");
-									});
-								});
-								</script>
-
-								<p>AOM, Information Engineering Jure Kranjc, s.p.</br>
-								Prevalje pod Krimom 28</br>
-								1352 Preserje</br>
-								Slovenia</br>
-								Tax ID: SI65672429</p>
-								<p>Phone: +386 40 807 280</br>
-								Email: jure.kranjc@aom.si
-								</p>								
-
-								<ul class="icons">
-									<li><a href="https://www.linkedin.com/in/jure-kranjc-8858b021a" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/jkeskuel/eskuel" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-				<div style="display: flex; align-items: center; gap: 10px; animation: fadeIn 4s ease-in;">
-				<style>
-					@keyframes fadeIn {
-						from {
-							opacity: 0;
-						}
-						to {
-							opacity: 1;
-						}
-					}
-				</style>
-					<a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url" target="_blank">
-					    <img src="images/MCSE.png" alt="MCSE" style="height: 130px;">
-					</a>
-					<a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url" target="_blank">
-					    <img src="images/MCSA.png" alt="MCSA" style="height: 130px;">
-					</a>
-					<a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url" target="_blank">
-					    <img src="images/ORA.png" alt="ORA19C" style="height: 130px;">
-					</a>
-
+	<section class="block" id="about">
+		<div class="wrap">
+			<h2>About</h2>
+			<div class="about">
+				<img src="images/JureKranjc.png" alt="Jure Kranjc" class="avatar">
+				<div class="bio">
+					<p>I've been working with SQL Server for the better part of two decades — government, finance, utilities, the usual suspects. Most of what I do is unglamorous: tune the slow query, untangle the HA setup, plan the migration so nobody calls anyone at 3 a.m.</p>
+					<p>I work independently, by the hour or by the project. No sales pitch, no decks, no "synergies". If your databases are misbehaving or you just want a second pair of eyes, get in touch.</p>
 				</div>
-								<footer id="footer">
-						<p class="copyright">&copy; Jure Kranjc. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
-
 			</div>
+		</div>
+	</section>
 
-		<!-- BG -->
-			<div id="bg"></div>
+	<section class="block" id="services">
+		<div class="wrap">
+			<h2>What I do</h2>
+			<ul class="services">
+				<li><strong>Performance tuning.</strong> <span>Queries, indexes, schemas, the occasional bad ORM decision.</span></li>
+				<li><strong>High availability & DR.</strong> <span>Always On, log shipping, failover clusters — designed so they actually work when you need them.</span></li>
+				<li><strong>Migrations.</strong> <span>Version upgrades, consolidations, on-prem to cloud. Boring is the goal.</span></li>
+				<li><strong>Cost & licensing review.</strong> <span>You're probably overpaying somewhere. Let's find out where.</span></li>
+				<li><strong>Dev support.</strong> <span>Helping app teams write data layers that age well.</span></li>
+				<li><strong>DevOps for databases.</strong> <span>Schema in source control, pipelines, repeatable deployments.</span></li>
+				<li><strong>Mentoring.</strong> <span>One-on-one or small team. I'd rather teach you than sell you a retainer.</span></li>
+			</ul>
+		</div>
+	</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<section class="block" id="certs">
+		<div class="wrap">
+			<h2>Certifications</h2>
+			<ul class="certs">
+				<li><a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url">MCSE — Data Management & Analytics</a></li>
+				<li><a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url">MCSA — SQL Server 2016</a></li>
+				<li><a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url">Oracle Certified Professional 19c</a></li>
+				<li><a href="https://www.credly.com/badges/4c163d16-5163-489d-90fd-3ebca84122a4/public_url">Microsoft Certified: Azure Data Engineer Associate</a></li>
+			</ul>
+			<div class="badges">
+				<a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url" target="_blank" rel="noopener"><img src="images/MCSE.png" alt="MCSE badge"></a>
+				<a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url" target="_blank" rel="noopener"><img src="images/MCSA.png" alt="MCSA badge"></a>
+				<a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url" target="_blank" rel="noopener"><img src="images/ORA.png" alt="Oracle 19c badge"></a>
+			</div>
+		</div>
+	</section>
 
-	</body>
+	<section class="block" id="notes">
+		<div class="wrap">
+			<h2>Notes</h2>
+			<p>Occasional write-ups from the field. No newsletter, no schedule — just whatever I felt worth writing down.</p>
+			<ul class="notes">
+				<li class="empty"><span>Nothing here yet. Check back.</span></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="block" id="contact">
+		<div class="wrap">
+			<h2>Contact</h2>
+			<div class="contact-grid">
+				<div>
+					<h3>Direct</h3>
+					<p><a href="mailto:jure.kranjc@aom.si">jure.kranjc@aom.si</a></p>
+					<p>+386 40 807 280</p>
+					<p style="margin-top:14px;">
+						<a href="https://www.linkedin.com/in/jure-kranjc-8858b021a">LinkedIn</a> ·
+						<a href="https://github.com/jkeskuel/eskuel">GitHub</a>
+					</p>
+					<h3 style="margin-top:24px;">Business</h3>
+					<p>AOM, Information Engineering Jure Kranjc, s.p.</p>
+					<p>Prevalje pod Krimom 28, 1352 Preserje, Slovenia</p>
+					<p>Tax ID: SI65672429</p>
+				</div>
+				<div>
+					<h3>Drop a line</h3>
+					<form id="contact-form" class="contact">
+						<div>
+							<label for="name">Name</label>
+							<input type="text" name="from_name" id="name" required />
+						</div>
+						<div>
+							<label for="email">Email</label>
+							<input type="email" name="reply_to" id="email" required />
+						</div>
+						<div>
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="4" required></textarea>
+						</div>
+						<button type="submit">Send</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="site">
+		<div class="wrap">
+			<span>&copy; Jure Kranjc</span>
+			<span><a href="mailto:jure.kranjc@aom.si">jure.kranjc@aom.si</a></span>
+		</div>
+	</footer>
+
+	<!-- EmailJS -->
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script>
+		(function(){ emailjs.init("T491ObZb_kHykk6_M"); })();
+		document.getElementById("contact-form").addEventListener("submit", function(event) {
+			event.preventDefault();
+			emailjs.sendForm("service_qg0k0um", "template_jc2723j", this)
+				.then(() => {
+					alert("Message sent. I'll get back to you.");
+					this.reset();
+				}, (error) => {
+					console.error("EmailJS error:", error);
+					alert("Couldn't send — try emailing jure.kranjc@aom.si directly.");
+				});
+		});
+	</script>
+
+</body>
 </html>
