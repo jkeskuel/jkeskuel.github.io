@@ -141,17 +141,33 @@ section.s::before {
 section.s.in::before { transform: scaleX(1); }
 
 .s-head {
-	font-size: 0.6875rem;
-	font-weight: 500;
-	letter-spacing: 0.22em;
-	text-transform: uppercase;
-	color: var(--faint);
+	display: inline-grid;
+	grid-template-areas: "stack";
+	align-items: center;
 	margin: 0 0 2rem;
 	opacity: 0;
 	transition: opacity 250ms ease;
 }
-.s-head canvas { display: block; }
+.s-head > * { grid-area: stack; }
+.s-head > canvas {
+	display: block;
+	transition: opacity 380ms ease 80ms;
+}
+.s-head > .text-final {
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--faint);
+	line-height: 1.9;
+	opacity: 0;
+	transition: opacity 380ms ease 80ms;
+	pointer-events: none;
+	align-self: center;
+}
 section.s.in .s-head { opacity: 1; }
+.s-head.settled > canvas { opacity: 0; }
+.s-head.settled > .text-final { opacity: 1; }
 
 .sr-only {
 	position: absolute;

@@ -156,11 +156,14 @@
 				ctx.fillRect(d.tx - d.size / 2, d.ty - d.size / 2, d.size, d.size);
 			}
 			if (busy) raf = requestAnimationFrame(frame);
+			else if (onDoneCb) { const cb = onDoneCb; onDoneCb = null; cb(); }
 		}
 
+		let onDoneCb = null;
 		return {
-			play: function () {
+			play: function (onDone) {
 				cancelAnimationFrame(raf);
+				onDoneCb = onDone || null;
 				t0 = performance.now();
 				raf = requestAnimationFrame(frame);
 			}
@@ -182,10 +185,10 @@
 			canvas.setAttribute('aria-hidden', 'true');
 			h.appendChild(canvas);
 
-			const sr = document.createElement('span');
-			sr.className = 'sr-only';
-			sr.textContent = raw;
-			h.appendChild(sr);
+			const finalText = document.createElement('span');
+			finalText.className = 'text-final';
+			finalText.textContent = raw;
+			h.appendChild(finalText);
 
 			const instance = pixelize(canvas, text, {
 				fontSize: 14,
@@ -220,7 +223,9 @@
 					e.target.classList.add('in');
 					const head = e.target.querySelector('.s-head');
 					const instance = head ? headInstances.get(head) : null;
-					if (instance) instance.play();
+					if (instance) {
+						instance.play(() => head.classList.add('settled'));
+					}
 				}, i * 280);
 			});
 		}, {
