@@ -166,28 +166,45 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		isolation: isolate;
 	}
 	.engagements li {
-		padding: 1.1rem 0;
+		padding: 1.4rem 0;
 		display: grid;
 		grid-template-columns: 9rem 1fr;
-		gap: 1.5rem;
+		gap: 1.75rem;
 		border-bottom: 1px solid var(--rule);
-		align-items: baseline;
+		align-items: center;
 	}
 	.engagements li:last-child { border-bottom: 0; }
 	.engagements .who {
-		font-weight: 500;
-		color: var(--ink);
-		font-size: 0.9375rem;
+		display: flex;
+		align-items: center;
+		height: 36px;
+	}
+	.engagements .who img {
+		max-height: 30px;
+		max-width: 8.5rem;
+		width: auto;
+		height: auto;
+		mix-blend-mode: multiply;
+		filter: grayscale(0.85) saturate(0.6) contrast(1.05) opacity(0.88);
+	}
+	.engagements .who .nm {
+		position: absolute;
+		width: 1px; height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
 	}
 	.engagements .what {
 		color: var(--mute);
 		font-size: 0.9375rem;
-		line-height: 1.5;
+		line-height: 1.55;
 	}
 	@media (max-width: 540px) {
-		.engagements li { grid-template-columns: 1fr; gap: 0.25rem; }
+		.engagements li { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.2rem 0; }
+		.engagements .who { height: auto; padding-bottom: 0.25rem; }
 	}
 
 	/* ---- Credentials inline ---- */
@@ -365,21 +382,22 @@
 <section class="s" id="work">
 	<div class="col">
 		<h2 class="s-head">Engagements</h2>
+		<p style="font-size: 0.8125rem; color: var(--faint); margin: -0.5rem 0 1.75rem;">Work performed under NDA; descriptions are intentionally non-specific.</p>
 		<ul class="engagements">
 			<li>
-				<div class="who">ELES</div>
+				<div class="who"><img src="../images/ELES-logo.png" alt="ELES"><span class="nm">ELES</span></div>
 				<div class="what">National electricity transmission system operator. Long-running database reliability and performance work on grid-critical systems.</div>
 			</li>
 			<li>
-				<div class="who">FURS</div>
+				<div class="who"><img src="../images/FURS-logo.png" alt="FURS"><span class="nm">FURS</span></div>
 				<div class="what">Slovenian Financial Administration. Database architecture and tuning across tax and customs systems.</div>
 			</li>
 			<li>
-				<div class="who">MORS</div>
+				<div class="who"><img src="../images/MORS-logo.jpg" alt="MORS"><span class="nm">MORS</span></div>
 				<div class="what">Ministry of Defence. Consulting on operational database systems.</div>
 			</li>
 			<li>
-				<div class="who">Mikrocop</div>
+				<div class="who"><img src="../images/mikrocop_logo.svg" alt="Mikrocop"><span class="nm">Mikrocop</span></div>
 				<div class="what">Document management and digital archival services. Performance, migrations, and platform work.</div>
 			</li>
 		</ul>
