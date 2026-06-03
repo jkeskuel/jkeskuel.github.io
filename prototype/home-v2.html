@@ -387,10 +387,10 @@
 
 <header class="top">
 	<div class="col-wide row">
-		<a href="/" class="name">Jure Kranjc<span class="pip"></span></a>
+		<a href="/" class="name" id="home-link">Jure Kranjc<span class="pip"></span></a>
 		<nav>
 			<a href="#work">Work</a>
-			<a href="#writing">Writing</a>
+			<a href="/writing/">Writing</a>
 			<a href="#contact">Contact</a>
 		</nav>
 	</div>
@@ -455,11 +455,8 @@
 <section class="s" id="writing">
 	<div class="col">
 		<h2 class="s-head">Writing</h2>
-		<ul class="writing">
-			<li>
-				<p class="writing-empty" style="grid-column: 1 / -1;">Occasional notes from the field. The archive will live here.</p>
-			</li>
-		</ul>
+		<p style="font-size: 1.0625rem; color: var(--text); margin: 0 0 1rem;">Occasional notes from the field. No schedule, no newsletter — I post when something feels worth writing down.</p>
+		<p style="font-size: 0.9375rem; margin: 0;"><a href="/writing/">Read the archive →</a></p>
 	</div>
 </section>
 
@@ -520,9 +517,19 @@
 		e.preventDefault();
 		emailjs.sendForm("service_qg0k0um", "template_jc2723j", this)
 			.then(() => { alert("Sent. I'll be in touch."); this.reset(); },
-				  (err) => { console.error(err); alert("Couldn't send — please email jure.kranjc@aom.si directly."); });
+				  (err) => { console.error(err); alert("Couldn't send — please email info@aom.si directly."); });
 	});
 	document.getElementById('y').textContent = new Date().getFullYear();
+
+	// Home-link: scroll-to-top when already on home, navigate otherwise.
+	document.getElementById('home-link').addEventListener('click', function(e) {
+		const p = location.pathname;
+		const onHome = p === '/' || p.endsWith('/index.html') || p.endsWith('/home-v2.html');
+		if (onHome) {
+			e.preventDefault();
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+	});
 </script>
 
 <script>
