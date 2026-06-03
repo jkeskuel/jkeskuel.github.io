@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Jure Kranjc — independent technical consultant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="I help organisations bring clarity, performance, and reliability to complex technical systems." />
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+	:root {
+		--bg: #f6f4ee;
+		--bg-2: #ede9df;
+		--ink: #1a1d22;
+		--ink-2: #2a2f37;
+		--ink-soft: #555a63;
+		--ink-faint: #8a8f98;
+		--rule: #e0dbd0;
+		--rule-soft: #ebe6dc;
+		--accent: #2e6166;
+		--accent-soft: #cfdedf;
+		--max: 1180px;
+		--read: 640px;
+	}
+
+	* { box-sizing: border-box; }
+	html { scroll-behavior: smooth; }
+	html, body {
+		margin: 0; padding: 0;
+		background: var(--bg);
+		color: var(--ink);
+		font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+		font-size: 16px;
+		line-height: 1.55;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	::selection { background: var(--accent); color: #fff; }
+
+	a {
+		color: var(--ink);
+		text-decoration: none;
+		border-bottom: 1px solid var(--rule);
+		transition: border-color 150ms ease, color 150ms ease;
+		padding-bottom: 1px;
+	}
+	a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+	.wrap {
+		max-width: var(--max);
+		margin: 0 auto;
+		padding: 0 32px;
+	}
+	@media (max-width: 600px) {
+		.wrap { padding: 0 22px; }
+	}
+
+	/* Top bar */
+	header.top {
+		padding: 26px 0 0;
+	}
+	header.top .wrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.monogram {
+		font-weight: 500;
+		font-size: 18px;
+		letter-spacing: -0.02em;
+		color: var(--ink);
+		border: 0;
+		display: inline-flex;
+		align-items: baseline;
+		opacity: 0;
+	}
+	.monogram::after {
+		content: "";
+		width: 5px; height: 5px;
+		border-radius: 50%;
+		background: var(--accent);
+		margin-left: 3px;
+		display: inline-block;
+	}
+	header.top nav a {
+		font-size: 13px;
+		color: var(--ink-soft);
+		margin-left: 22px;
+		border: 0;
+		letter-spacing: 0.04em;
+		opacity: 0;
+	}
+	header.top nav a:hover { color: var(--accent); }
+
+	/* Hero */
+	section.hero {
+		padding: 80px 0 64px;
+		position: relative;
+	}
+	@media (max-width: 700px) {
+		section.hero { padding: 56px 0 40px; }
+	}
+	#hero-canvas {
+		display: block;
+		width: 100%;
+		height: 220px;
+	}
+	@media (min-width: 700px) {
+		#hero-canvas { height: 280px; }
+	}
+	@media (min-width: 1100px) {
+		#hero-canvas { height: 320px; }
+	}
+
+	.hero-tagline {
+		max-width: 560px;
+		margin: 36px 0 0;
+		font-size: 19px;
+		font-weight: 400;
+		color: var(--ink-2);
+		line-height: 1.5;
+		opacity: 0;
+	}
+	@media (min-width: 700px) {
+		.hero-tagline { font-size: 21px; }
+	}
+	.hero-meta {
+		margin-top: 14px;
+		font-size: 13px;
+		color: var(--ink-faint);
+		letter-spacing: 0.06em;
+		opacity: 0;
+	}
+	.hero-meta span + span::before {
+		content: " · ";
+		margin: 0 4px;
+		color: var(--rule);
+	}
+
+	/* Sections */
+	section.block {
+		padding: 72px 0;
+		border-top: 1px solid var(--rule);
+	}
+	@media (max-width: 700px) {
+		section.block { padding: 56px 0; }
+	}
+
+	.block-grid {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		gap: 56px;
+	}
+	@media (max-width: 800px) {
+		.block-grid { grid-template-columns: 1fr; gap: 18px; }
+	}
+
+	.block-label {
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--ink-faint);
+		padding-top: 6px;
+	}
+	.block-label .num {
+		font-family: 'Newsreader', serif;
+		font-style: italic;
+		font-weight: 400;
+		font-size: 13px;
+		margin-right: 6px;
+		color: var(--ink-soft);
+		text-transform: none;
+		letter-spacing: 0;
+	}
+
+	.block-body {
+		max-width: var(--read);
+	}
+	.block-body p { margin: 0 0 18px; font-size: 17px; line-height: 1.65; color: var(--ink-2); }
+	.block-body p:last-child { margin-bottom: 0; }
+	.block-body p.lede { font-size: 19px; color: var(--ink); }
+
+	/* About */
+	.about-photo {
+		float: right;
+		width: 130px;
+		height: 130px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin: 4px 0 12px 24px;
+		border: 1px solid var(--rule);
+	}
+	@media (max-width: 500px) {
+		.about-photo { float: none; display: block; margin: 0 0 20px; width: 110px; height: 110px; }
+	}
+
+	/* Work */
+	.work-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.work-list li {
+		display: grid;
+		grid-template-columns: 120px 1fr;
+		align-items: center;
+		gap: 28px;
+		padding: 20px 0;
+		border-bottom: 1px solid var(--rule-soft);
+	}
+	.work-list li:last-child { border-bottom: 0; }
+	.work-list img {
+		max-height: 44px;
+		max-width: 100%;
+		width: auto;
+		filter: grayscale(1);
+		opacity: 0.78;
+		transition: filter 200ms ease, opacity 200ms ease;
+		justify-self: start;
+	}
+	.work-list li:hover img { filter: none; opacity: 1; }
+	.work-list .name {
+		font-weight: 500;
+		font-size: 16px;
+		color: var(--ink);
+		margin: 0 0 2px;
+	}
+	.work-list .desc {
+		font-size: 14px;
+		color: var(--ink-soft);
+		margin: 0;
+		line-height: 1.5;
+	}
+	@media (max-width: 500px) {
+		.work-list li { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
+		.work-list img { max-height: 36px; }
+	}
+
+	/* Certifications */
+	.certs-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 18px 28px;
+		margin: 8px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+	.certs-row li {
+		font-size: 14px;
+		color: var(--ink-soft);
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	.certs-row li::before {
+		content: "";
+		width: 4px; height: 4px;
+		border-radius: 50%;
+		background: var(--accent);
+		display: inline-block;
+	}
+	.certs-row a { border-bottom: 1px dotted var(--rule); }
+
+	/* Notes */
+	.notes-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.notes-list li {
+		padding: 16px 0;
+		border-bottom: 1px solid var(--rule-soft);
+		display: grid;
+		grid-template-columns: 110px 1fr;
+		gap: 24px;
+		align-items: baseline;
+	}
+	.notes-list li:last-child { border-bottom: 0; }
+	.notes-list time {
+		color: var(--ink-faint);
+		font-size: 13px;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: 0.04em;
+	}
+	.notes-list a.title { border: 0; color: var(--ink); font-weight: 500; }
+	.notes-list a.title:hover { color: var(--accent); }
+	.notes-empty {
+		font-family: 'Newsreader', serif;
+		font-style: italic;
+		font-size: 17px;
+		color: var(--ink-soft);
+		margin: 4px 0 0;
+		max-width: 520px;
+	}
+
+	/* Contact */
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 48px;
+	}
+	@media (max-width: 700px) {
+		.contact-grid { grid-template-columns: 1fr; gap: 32px; }
+	}
+	.contact-grid h4 {
+		font-size: 11px;
+		font-weight: 500;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--ink-faint);
+		margin: 0 0 12px;
+	}
+	.contact-grid p { font-size: 15px; color: var(--ink-2); margin: 0 0 4px; }
+	.contact-grid p.muted { color: var(--ink-soft); font-size: 14px; }
+
+	form.contact {
+		display: grid;
+		gap: 12px;
+	}
+	form.contact label {
+		font-size: 12px;
+		color: var(--ink-faint);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		display: block;
+		margin-bottom: 4px;
+	}
+	form.contact input, form.contact textarea {
+		width: 100%;
+		padding: 10px 0;
+		font: inherit;
+		font-size: 15px;
+		color: var(--ink);
+		background: transparent;
+		border: 0;
+		border-bottom: 1px solid var(--rule);
+		outline: none;
+		transition: border-color 150ms ease;
+	}
+	form.contact input:focus, form.contact textarea:focus { border-bottom-color: var(--accent); }
+	form.contact textarea { resize: vertical; min-height: 80px; line-height: 1.45; }
+	form.contact button {
+		justify-self: start;
+		margin-top: 6px;
+		font: inherit; font-size: 13px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		padding: 10px 22px;
+		background: var(--ink);
+		color: var(--bg);
+		border: 0;
+		border-radius: 999px;
+		cursor: pointer;
+		transition: background 150ms ease;
+	}
+	form.contact button:hover { background: var(--accent); }
+
+	/* Footer */
+	footer.site {
+		padding: 40px 0 56px;
+		border-top: 1px solid var(--rule);
+		color: var(--ink-faint);
+		font-size: 13px;
+	}
+	footer.site .wrap {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 24px;
+		align-items: start;
+	}
+	@media (max-width: 600px) {
+		footer.site .wrap { grid-template-columns: 1fr; }
+	}
+	footer.site p { margin: 0 0 4px; }
+	footer.site a { color: var(--ink-soft); border: 0; }
+	footer.site a:hover { color: var(--accent); }
+	footer.site .right { text-align: right; }
+	@media (max-width: 600px) { footer.site .right { text-align: left; } }
+	footer.site .replay {
+		font: inherit; font-size: 12px;
+		padding: 5px 12px;
+		background: transparent;
+		border: 1px solid var(--rule);
+		border-radius: 999px;
+		color: var(--ink-soft);
+		cursor: pointer;
+		letter-spacing: 0.08em;
+		margin-top: 8px;
+	}
+	footer.site .replay:hover { color: var(--ink); border-color: var(--ink-faint); }
+
+	@media (prefers-reduced-motion: reduce) {
+		.monogram, header.top nav a, .hero-tagline, .hero-meta { opacity: 1 !important; }
+	}
+</style>
+</head>
+<body>
+
+<header class="top">
+	<div class="wrap">
+		<a class="monogram" href="/">JK</a>
+		<nav>
+			<a href="#about">About</a>
+			<a href="#work">Work</a>
+			<a href="#notes">Notes</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</div>
+</header>
+
+<div class="wrap">
+
+	<section class="hero">
+		<canvas id="hero-canvas" aria-label="Jure Kranjc"></canvas>
+		<p class="hero-tagline">Independent technical consultant. I help organisations bring clarity, performance, and reliability to complex systems — usually the ones nobody wants to touch.</p>
+		<p class="hero-meta">
+			<span>Based in Slovenia</span>
+			<span>Working since 2008</span>
+			<span>Available for new engagements</span>
+		</p>
+	</section>
+
+	<section class="block" id="about">
+		<div class="block-grid">
+			<div class="block-label"><span class="num">01</span> About</div>
+			<div class="block-body">
+				<img src="../images/JureKranjc.png" alt="Jure Kranjc" class="about-photo">
+				<p class="lede">I help organisations bring clarity, performance, and reliability to complex technical systems.</p>
+				<p>My work sits between databases, infrastructure, applications, and architecture. I usually get involved when systems are business-critical, performance matters, or the technical picture has become difficult to navigate.</p>
+				<p>I focus on understanding the full system, identifying the real cause of problems, and designing improvements that are technically sound, practical, and maintainable.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="block" id="work">
+		<div class="block-grid">
+			<div class="block-label"><span class="num">02</span> Selected work</div>
+			<div class="block-body">
+				<ul class="work-list">
+					<li>
+						<img src="../images/ELES-logo.png" alt="ELES">
+						<div>
+							<p class="name">ELES</p>
+							<p class="desc">National electricity transmission system operator. Long-running engagement on database reliability and performance for grid-critical systems.</p>
+						</div>
+					</li>
+					<li>
+						<img src="../images/FURS-logo.png" alt="FURS">
+						<div>
+							<p class="name">FURS</p>
+							<p class="desc">Slovenian Financial Administration. Database architecture and tuning across tax and customs systems.</p>
+						</div>
+					</li>
+					<li>
+						<img src="../images/MORS-logo.jpg" alt="MORS">
+						<div>
+							<p class="name">MORS</p>
+							<p class="desc">Ministry of Defence. Database consulting on operational systems.</p>
+						</div>
+					</li>
+					<li>
+						<img src="../images/mikrocop_logo.svg" alt="Mikrocop">
+						<div>
+							<p class="name">Mikrocop</p>
+							<p class="desc">Document management and digital archival services. Performance, migrations, and platform work.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="block" id="certifications">
+		<div class="block-grid">
+			<div class="block-label"><span class="num">03</span> Credentials</div>
+			<div class="block-body">
+				<p>Certifications I maintain — Microsoft and Oracle have changed names a few times, but the badges still mean what they meant.</p>
+				<ul class="certs-row">
+					<li><a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url">MCSE — Data Management &amp; Analytics</a></li>
+					<li><a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url">MCSA — SQL Server 2016</a></li>
+					<li><a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url">Oracle Certified Professional 19c</a></li>
+					<li><a href="https://www.credly.com/badges/4c163d16-5163-489d-90fd-3ebca84122a4/public_url">Azure Data Engineer Associate</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="block" id="notes">
+		<div class="block-grid">
+			<div class="block-label"><span class="num">04</span> Notes</div>
+			<div class="block-body">
+				<p>Occasional write-ups from the field. No schedule, no newsletter — I post when something feels worth writing down. Maybe once a quarter. Maybe not.</p>
+				<ul class="notes-list">
+					<li>
+						<p class="notes-empty">Nothing here yet. Check back, or don't.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="block" id="contact">
+		<div class="block-grid">
+			<div class="block-label"><span class="num">05</span> Contact</div>
+			<div class="block-body">
+				<div class="contact-grid">
+					<div>
+						<h4>Direct</h4>
+						<p><a href="mailto:jure.kranjc@aom.si">jure.kranjc@aom.si</a></p>
+						<p>+386 40 807 280</p>
+						<p class="muted" style="margin-top:12px;">
+							<a href="https://www.linkedin.com/in/jure-kranjc-8858b021a">LinkedIn</a> ·
+							<a href="https://github.com/jkeskuel/eskuel">GitHub</a>
+						</p>
+					</div>
+					<div>
+						<h4>Drop a line</h4>
+						<form id="contact-form" class="contact">
+							<div>
+								<label for="name">Name</label>
+								<input type="text" name="from_name" id="name" required />
+							</div>
+							<div>
+								<label for="email">Email</label>
+								<input type="email" name="reply_to" id="email" required />
+							</div>
+							<div>
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="3" required></textarea>
+							</div>
+							<button type="submit">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+
+<footer class="site">
+	<div class="wrap">
+		<div>
+			<p>AOM, Information Engineering Jure Kranjc, s.p.</p>
+			<p>Prevalje pod Krimom 28, 1352 Preserje, Slovenia</p>
+			<p>Tax ID: SI65672429</p>
+		</div>
+		<div class="right">
+			<p>&copy; <span id="year">2026</span> Jure Kranjc</p>
+			<button class="replay" id="replay-btn">Replay intro</button>
+		</div>
+	</div>
+</footer>
+
+<!-- EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+	(function(){ emailjs.init("T491ObZb_kHykk6_M"); })();
+	document.getElementById("contact-form").addEventListener("submit", function(event) {
+		event.preventDefault();
+		emailjs.sendForm("service_qg0k0um", "template_jc2723j", this)
+			.then(() => { alert("Message sent. I'll get back to you."); this.reset(); },
+				  (error) => { console.error("EmailJS error:", error); alert("Couldn't send — try emailing jure.kranjc@aom.si directly."); });
+	});
+	document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Hero block animation -->
+<script>
+(function() {
+	const canvas = document.getElementById('hero-canvas');
+	const ctx = canvas.getContext('2d');
+	const tagline = document.querySelector('.hero-tagline');
+	const meta = document.querySelector('.hero-meta');
+	const monogram = document.querySelector('.monogram');
+	const navLinks = document.querySelectorAll('header.top nav a');
+
+	const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	const INK = '#1a1d22';
+	const ACCENT = '#2e6166';
+
+	let particles = [];
+	let raf = null;
+	let startTime = 0;
+	let groundY = 0;
+
+	function sampleText(text) {
+		const dpr = Math.min(window.devicePixelRatio || 1, 2);
+		const cssW = canvas.clientWidth;
+		const cssH = canvas.clientHeight;
+		canvas.width = cssW * dpr;
+		canvas.height = cssH * dpr;
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+		const off = document.createElement('canvas');
+		off.width = cssW;
+		off.height = cssH;
+		const octx = off.getContext('2d');
+
+		// Pick a font size that fits ~92% of width.
+		let size = Math.min(cssH * 0.62, cssW * 0.22);
+		size = Math.max(48, Math.min(size, 180));
+		const FONT = `300 ${size}px Inter, -apple-system, BlinkMacSystemFont, sans-serif`;
+		octx.font = FONT;
+		octx.fillStyle = '#000';
+		octx.textBaseline = 'middle';
+		octx.textAlign = 'left';
+
+		let textWidth = octx.measureText(text).width;
+		while (textWidth > cssW * 0.94 && size > 28) {
+			size -= 2;
+			octx.font = `300 ${size}px Inter, -apple-system, BlinkMacSystemFont, sans-serif`;
+			textWidth = octx.measureText(text).width;
+		}
+
+		// Sit text slightly above vertical center to leave floor space below.
+		const verticalCenter = cssH * 0.42;
+		const tx = 0;
+		octx.fillText(text, tx, verticalCenter);
+
+		const img = octx.getImageData(0, 0, cssW, cssH).data;
+
+		const spacing = Math.max(4, Math.round(size / 16));
+		const dot = Math.max(2, Math.round(spacing * 0.6));
+
+		const targets = [];
+		for (let y = 0; y < cssH; y += spacing) {
+			for (let x = 0; x < cssW; x += spacing) {
+				const idx = (y * cssW + x) * 4;
+				if (img[idx + 3] > 128) {
+					targets.push({ x: x + spacing / 2, y: y + spacing / 2 });
+				}
+			}
+		}
+
+		const maxTargetY = targets.reduce((m, t) => Math.max(m, t.y), 0);
+		groundY = Math.min(cssH - 4, maxTargetY + Math.max(spacing * 2.2, 16));
+
+		return { targets, dot, cssW, cssH };
+	}
+
+	function build() {
+		const text = 'Jure Kranjc';
+		const { targets, dot, cssW } = sampleText(text);
+
+		const maxTy = targets.reduce((m, t) => Math.max(m, t.y), 0);
+		const minTy = targets.reduce((m, t) => Math.min(m, t.y), Infinity);
+		const rowSpan = Math.max(maxTy - minTy, 1);
+
+		particles = targets.map((t) => {
+			const fromLeft = Math.random() < 0.82
+				? (t.x < cssW / 2)
+				: Math.random() < 0.5;
+
+			const offscreen = 60 + Math.random() * 180;
+			const startX = fromLeft ? -offscreen : cssW + offscreen;
+			const slideDistance = Math.abs(t.x - startX);
+
+			const rowFromBottom = (maxTy - t.y) / rowSpan;
+			const slideDelay = rowFromBottom * 520 + Math.random() * 200;
+			const slideDuration = 480 + slideDistance * 0.5 + Math.random() * 140;
+			const riseDuration = 280 + (groundY - t.y) * 1.4 + Math.random() * 70;
+
+			return {
+				tx: t.x,
+				ty: t.y,
+				startX,
+				size: dot,
+				slideDelay,
+				slideDuration,
+				riseDuration,
+				color: Math.random() < 0.05 ? ACCENT : INK,
+				fromLeft,
+			};
+		});
+
+		cancelAnimationFrame(raf);
+		startTime = performance.now();
+
+		// Reset entrance UI elements
+		monogram.style.transition = 'opacity 700ms ease';
+		monogram.style.opacity = '0';
+		navLinks.forEach(n => { n.style.transition = 'opacity 700ms ease'; n.style.opacity = '0'; });
+		tagline.style.transition = 'opacity 800ms ease, transform 800ms ease';
+		tagline.style.transform = 'translateY(8px)';
+		tagline.style.opacity = '0';
+		meta.style.transition = 'opacity 800ms ease, transform 800ms ease';
+		meta.style.transform = 'translateY(8px)';
+		meta.style.opacity = '0';
+
+		if (reduced) {
+			drawFinal();
+			monogram.style.opacity = '1';
+			navLinks.forEach(n => n.style.opacity = '1');
+			tagline.style.opacity = '1'; tagline.style.transform = 'none';
+			meta.style.opacity = '1'; meta.style.transform = 'none';
+			return;
+		}
+
+		raf = requestAnimationFrame(frame);
+
+		const longest = particles.reduce((m, p) => Math.max(m, p.slideDelay + p.slideDuration + p.riseDuration), 0);
+		setTimeout(() => { monogram.style.opacity = '1'; }, 200);
+		navLinks.forEach((n, i) => setTimeout(() => n.style.opacity = '1', 350 + i * 80));
+		setTimeout(() => { tagline.style.opacity = '1'; tagline.style.transform = 'none'; }, Math.max(longest - 400, 1100));
+		setTimeout(() => { meta.style.opacity = '1'; meta.style.transform = 'none'; }, Math.max(longest - 200, 1400));
+	}
+
+	function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+	function easeOutBack(t) {
+		const c1 = 1.70158;
+		const c3 = c1 + 1;
+		return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+	}
+
+	function frame(now) {
+		const elapsed = now - startTime;
+		const cssW = canvas.clientWidth;
+		const cssH = canvas.clientHeight;
+		ctx.clearRect(0, 0, cssW, cssH);
+
+		let allDone = true;
+		for (const p of particles) {
+			const local = elapsed - p.slideDelay;
+			if (local < 0) { allDone = false; continue; }
+
+			if (local < p.slideDuration) {
+				allDone = false;
+				const t = local / p.slideDuration;
+				const eased = easeOutCubic(t);
+				const x = p.startX + (p.tx - p.startX) * eased;
+				const y = groundY;
+
+				const trailLen = p.fromLeft ? -p.size * 2.2 : p.size * 2.2;
+				const grad = ctx.createLinearGradient(x, y, x + trailLen, y);
+				grad.addColorStop(0, p.color);
+				grad.addColorStop(1, 'rgba(26, 29, 34, 0)');
+				ctx.fillStyle = grad;
+				ctx.globalAlpha = 0.4;
+				ctx.fillRect(
+					Math.min(x, x + trailLen) - p.size / 2,
+					y - p.size / 2,
+					Math.abs(trailLen) + p.size,
+					p.size
+				);
+				ctx.globalAlpha = 1;
+
+				ctx.fillStyle = p.color;
+				ctx.fillRect(x - p.size / 2, y - p.size / 2, p.size, p.size);
+				continue;
+			}
+
+			const riseLocal = local - p.slideDuration;
+			if (riseLocal < p.riseDuration) {
+				allDone = false;
+				const t = riseLocal / p.riseDuration;
+				const eased = easeOutBack(Math.min(t, 1));
+				const y = groundY + (p.ty - groundY) * eased;
+				ctx.fillStyle = p.color;
+				ctx.fillRect(p.tx - p.size / 2, y - p.size / 2, p.size, p.size);
+				continue;
+			}
+
+			ctx.fillStyle = p.color;
+			ctx.fillRect(p.tx - p.size / 2, p.ty - p.size / 2, p.size, p.size);
+		}
+
+		if (!allDone) {
+			raf = requestAnimationFrame(frame);
+		}
+	}
+
+	function drawFinal() {
+		const cssW = canvas.clientWidth;
+		const cssH = canvas.clientHeight;
+		ctx.clearRect(0, 0, cssW, cssH);
+		for (const p of particles) {
+			ctx.fillStyle = p.color;
+			ctx.fillRect(p.tx - p.size / 2, p.ty - p.size / 2, p.size, p.size);
+		}
+	}
+
+	let resizeTimer;
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(() => {
+			const { targets, dot } = sampleText('Jure Kranjc');
+			particles = targets.map(t => ({
+				tx: t.x, ty: t.y, startX: t.x, size: dot,
+				slideDelay: 0, slideDuration: 1, riseDuration: 1,
+				color: Math.random() < 0.05 ? ACCENT : INK, fromLeft: true,
+			}));
+			drawFinal();
+		}, 200);
+	});
+
+	document.getElementById('replay-btn').addEventListener('click', (e) => {
+		e.preventDefault();
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+		setTimeout(build, 400);
+	});
+
+	// Run once webfont has had a chance to load so sampling uses Inter.
+	if (document.fonts && document.fonts.ready) {
+		document.fonts.ready.then(build);
+	} else {
+		setTimeout(build, 100);
+	}
+})();
+</script>
+
+</body>
+</html>
