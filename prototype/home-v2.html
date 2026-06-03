@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Jure Kranjc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Independent technical consultant. I help organisations bring clarity, performance, and reliability to complex systems." />
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+	:root {
+		--bg: #faf9f5;
+		--ink: #131418;
+		--text: #2a2c30;
+		--mute: #5a5d63;
+		--faint: #9b9ea4;
+		--rule: #e6e2d6;
+		--mark: #8c3a1d;
+
+		--read: 38rem;
+		--wide: 62rem;
+	}
+
+	* { box-sizing: border-box; }
+	html { scroll-behavior: smooth; }
+	html, body {
+		margin: 0; padding: 0;
+		background: var(--bg);
+		color: var(--text);
+		font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+		font-size: 17px;
+		line-height: 1.6;
+		font-feature-settings: "ss01", "cv11", "cv05";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+	}
+	::selection { background: var(--ink); color: var(--bg); }
+
+	a {
+		color: var(--ink);
+		text-decoration: none;
+		border-bottom: 1px solid var(--rule);
+		padding-bottom: 1px;
+		transition: border-color 180ms ease;
+	}
+	a:hover, a:focus-visible { border-bottom-color: var(--ink); outline: none; }
+
+	.col {
+		max-width: var(--read);
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+	.col-wide {
+		max-width: var(--wide);
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	/* ---- Header ---- */
+	header.top {
+		padding: 1.75rem 0 0;
+	}
+	header.top .row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.name {
+		font-weight: 500;
+		font-size: 0.95rem;
+		letter-spacing: -0.005em;
+		color: var(--ink);
+		border: 0;
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.25rem;
+		opacity: 0;
+	}
+	.name .pip {
+		width: 5px; height: 5px;
+		background: var(--mark);
+		border-radius: 50%;
+		display: inline-block;
+		transform: translateY(-1px);
+	}
+	header.top nav {
+		display: flex;
+		gap: 1.5rem;
+	}
+	header.top nav a {
+		font-size: 0.8125rem;
+		color: var(--mute);
+		border: 0;
+		opacity: 0;
+	}
+	header.top nav a:hover { color: var(--ink); }
+
+	/* ---- Hero ---- */
+	section.hero {
+		padding: 5rem 0 6rem;
+	}
+	@media (max-width: 720px) {
+		section.hero { padding: 3.5rem 0 4rem; }
+	}
+	#wordmark {
+		display: block;
+		width: 100%;
+		height: 240px;
+		cursor: pointer;
+	}
+	@media (min-width: 720px) { #wordmark { height: 300px; } }
+	@media (min-width: 1080px) { #wordmark { height: 360px; } }
+
+	.lead {
+		margin: 2.5rem auto 0;
+		max-width: 32rem;
+		font-size: 1.0625rem;
+		color: var(--mute);
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	@media (min-width: 720px) {
+		.lead { font-size: 1.125rem; margin-top: 3rem; }
+	}
+
+	/* ---- Sections ---- */
+	section.s {
+		padding: 5rem 0;
+		border-top: 1px solid var(--rule);
+	}
+	@media (max-width: 720px) {
+		section.s { padding: 3.5rem 0; }
+	}
+
+	.s-head {
+		font-size: 0.6875rem;
+		font-weight: 500;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--faint);
+		margin: 0 0 2rem;
+	}
+
+	.s-body p {
+		margin: 0 0 1.1rem;
+		font-size: 1.0625rem;
+		line-height: 1.65;
+		color: var(--text);
+	}
+	.s-body p:last-child { margin-bottom: 0; }
+	.s-body p.first {
+		font-size: 1.1875rem;
+		color: var(--ink);
+		line-height: 1.55;
+	}
+	@media (min-width: 720px) {
+		.s-body p { font-size: 1.0625rem; }
+		.s-body p.first { font-size: 1.25rem; }
+	}
+
+	/* ---- Work ---- */
+	.engagements {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.engagements li {
+		padding: 1.1rem 0;
+		display: grid;
+		grid-template-columns: 9rem 1fr;
+		gap: 1.5rem;
+		border-bottom: 1px solid var(--rule);
+		align-items: baseline;
+	}
+	.engagements li:last-child { border-bottom: 0; }
+	.engagements .who {
+		font-weight: 500;
+		color: var(--ink);
+		font-size: 0.9375rem;
+	}
+	.engagements .what {
+		color: var(--mute);
+		font-size: 0.9375rem;
+		line-height: 1.5;
+	}
+	@media (max-width: 540px) {
+		.engagements li { grid-template-columns: 1fr; gap: 0.25rem; }
+	}
+
+	/* ---- Credentials inline ---- */
+	.creds {
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0 0;
+		font-size: 0.9375rem;
+		color: var(--mute);
+	}
+	.creds li {
+		padding: 0.6rem 0;
+		border-bottom: 1px solid var(--rule);
+	}
+	.creds li:last-child { border-bottom: 0; }
+	.creds a { color: var(--text); }
+
+	/* ---- Writing ---- */
+	.writing {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.writing li {
+		padding: 1rem 0;
+		display: grid;
+		grid-template-columns: 6rem 1fr;
+		gap: 1.5rem;
+		border-bottom: 1px solid var(--rule);
+		align-items: baseline;
+	}
+	.writing li:last-child { border-bottom: 0; }
+	.writing time {
+		color: var(--faint);
+		font-size: 0.8125rem;
+		font-variant-numeric: tabular-nums;
+	}
+	.writing a.t { color: var(--ink); border: 0; font-size: 0.9375rem; }
+	.writing a.t:hover { color: var(--mark); }
+	.writing-empty {
+		font-size: 0.9375rem;
+		color: var(--mute);
+		margin: 0;
+	}
+
+	/* ---- Contact ---- */
+	.contact-row {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2.25rem;
+		margin-top: 0.5rem;
+	}
+	.contact-row dt {
+		font-size: 0.6875rem;
+		font-weight: 500;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--faint);
+		margin-bottom: 0.5rem;
+	}
+	.contact-row dd {
+		margin: 0 0 0.25rem;
+		font-size: 0.9375rem;
+		color: var(--text);
+	}
+	.contact-row a { color: var(--ink); }
+
+	form.send {
+		display: grid;
+		gap: 0.9rem;
+		margin-top: 1.25rem;
+	}
+	form.send label {
+		font-size: 0.6875rem;
+		font-weight: 500;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--faint);
+		display: block;
+		margin-bottom: 0.35rem;
+	}
+	form.send input, form.send textarea {
+		width: 100%;
+		padding: 0.5rem 0;
+		font: inherit;
+		font-size: 0.9375rem;
+		color: var(--ink);
+		background: transparent;
+		border: 0;
+		border-bottom: 1px solid var(--rule);
+		outline: none;
+		transition: border-color 180ms ease;
+		font-feature-settings: inherit;
+	}
+	form.send input:focus, form.send textarea:focus { border-bottom-color: var(--ink); }
+	form.send textarea { resize: vertical; min-height: 4.5rem; line-height: 1.5; }
+	form.send button {
+		justify-self: start;
+		margin-top: 0.5rem;
+		font: inherit;
+		font-size: 0.75rem;
+		font-weight: 500;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		padding: 0.7rem 1.4rem;
+		background: var(--ink);
+		color: var(--bg);
+		border: 0;
+		border-radius: 2px;
+		cursor: pointer;
+		transition: background 180ms ease;
+	}
+	form.send button:hover { background: var(--mark); }
+
+	/* ---- Footer ---- */
+	footer.btm {
+		padding: 3rem 0 4rem;
+		border-top: 1px solid var(--rule);
+		color: var(--faint);
+		font-size: 0.8125rem;
+		line-height: 1.65;
+	}
+	footer.btm .row {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 1.5rem;
+		align-items: end;
+	}
+	@media (max-width: 540px) {
+		footer.btm .row { grid-template-columns: 1fr; }
+	}
+	footer.btm p { margin: 0; }
+	footer.btm a { color: var(--mute); border: 0; }
+	footer.btm a:hover { color: var(--ink); }
+	footer.btm .end { text-align: right; }
+	@media (max-width: 540px) { footer.btm .end { text-align: left; } }
+
+	@media (prefers-reduced-motion: reduce) {
+		.name, header.top nav a, .lead { opacity: 1 !important; transform: none !important; }
+		html { scroll-behavior: auto; }
+	}
+</style>
+</head>
+<body>
+
+<header class="top">
+	<div class="col-wide row">
+		<a href="/" class="name">Jure Kranjc<span class="pip"></span></a>
+		<nav>
+			<a href="#work">Work</a>
+			<a href="#writing">Writing</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</div>
+</header>
+
+<section class="hero">
+	<div class="col-wide">
+		<canvas id="wordmark" aria-label="Jure Kranjc" role="img" title="Click to replay"></canvas>
+		<p class="lead">Independent technical consultant. Database systems, infrastructure, and architecture.</p>
+	</div>
+</section>
+
+<section class="s" id="about">
+	<div class="col">
+		<h2 class="s-head">About</h2>
+		<div class="s-body">
+			<p class="first">I help organisations bring clarity, performance, and reliability to complex technical systems.</p>
+			<p>My work sits between databases, infrastructure, applications, and architecture. I usually get involved when systems are business-critical, performance matters, or the technical picture has become difficult to navigate.</p>
+			<p>I focus on understanding the full system, identifying the real cause of problems, and designing improvements that are technically sound, practical, and maintainable.</p>
+		</div>
+	</div>
+</section>
+
+<section class="s" id="work">
+	<div class="col">
+		<h2 class="s-head">Engagements</h2>
+		<ul class="engagements">
+			<li>
+				<div class="who">ELES</div>
+				<div class="what">National electricity transmission system operator. Long-running database reliability and performance work on grid-critical systems.</div>
+			</li>
+			<li>
+				<div class="who">FURS</div>
+				<div class="what">Slovenian Financial Administration. Database architecture and tuning across tax and customs systems.</div>
+			</li>
+			<li>
+				<div class="who">MORS</div>
+				<div class="what">Ministry of Defence. Consulting on operational database systems.</div>
+			</li>
+			<li>
+				<div class="who">Mikrocop</div>
+				<div class="what">Document management and digital archival services. Performance, migrations, and platform work.</div>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="s" id="credentials">
+	<div class="col">
+		<h2 class="s-head">Credentials</h2>
+		<ul class="creds">
+			<li><a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url">MCSE — Data Management &amp; Analytics</a></li>
+			<li><a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url">MCSA — SQL Server 2016</a></li>
+			<li><a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url">Oracle Certified Professional 19c</a></li>
+			<li><a href="https://www.credly.com/badges/4c163d16-5163-489d-90fd-3ebca84122a4/public_url">Microsoft Certified: Azure Data Engineer Associate</a></li>
+		</ul>
+	</div>
+</section>
+
+<section class="s" id="writing">
+	<div class="col">
+		<h2 class="s-head">Writing</h2>
+		<ul class="writing">
+			<li>
+				<p class="writing-empty" style="grid-column: 1 / -1;">Occasional notes from the field. The archive will live here.</p>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="s" id="contact">
+	<div class="col">
+		<h2 class="s-head">Contact</h2>
+		<dl class="contact-row">
+			<div>
+				<dt>Direct</dt>
+				<dd><a href="mailto:jure.kranjc@aom.si">jure.kranjc@aom.si</a></dd>
+				<dd>+386 40 807 280</dd>
+				<dd style="margin-top:0.6rem;"><a href="https://www.linkedin.com/in/jure-kranjc-8858b021a">LinkedIn</a> &nbsp;·&nbsp; <a href="https://github.com/jkeskuel/eskuel">GitHub</a></dd>
+			</div>
+			<div>
+				<dt>Send a message</dt>
+				<form id="msg" class="send">
+					<div>
+						<label for="m-name">Name</label>
+						<input type="text" name="from_name" id="m-name" required />
+					</div>
+					<div>
+						<label for="m-email">Email</label>
+						<input type="email" name="reply_to" id="m-email" required />
+					</div>
+					<div>
+						<label for="m-body">Message</label>
+						<textarea name="message" id="m-body" rows="3" required></textarea>
+					</div>
+					<button type="submit">Send</button>
+				</form>
+			</div>
+		</dl>
+	</div>
+</section>
+
+<footer class="btm">
+	<div class="col-wide row">
+		<div>
+			<p>AOM, Information Engineering Jure Kranjc, s.p.</p>
+			<p>Prevalje pod Krimom 28, 1352 Preserje, Slovenia</p>
+			<p>Tax ID: SI65672429</p>
+		</div>
+		<div class="end">
+			<p>&copy; <span id="y">2026</span> Jure Kranjc</p>
+		</div>
+	</div>
+</footer>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+	(function(){ emailjs.init("T491ObZb_kHykk6_M"); })();
+	document.getElementById("msg").addEventListener("submit", function(e) {
+		e.preventDefault();
+		emailjs.sendForm("service_qg0k0um", "template_jc2723j", this)
+			.then(() => { alert("Sent. I'll be in touch."); this.reset(); },
+				  (err) => { console.error(err); alert("Couldn't send — please email jure.kranjc@aom.si directly."); });
+	});
+	document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+<script>
+/* Wordmark: blocks slide in along the floor, then rise into the name. */
+(function () {
+	const canvas = document.getElementById('wordmark');
+	const ctx = canvas.getContext('2d');
+	const lead = document.querySelector('.lead');
+	const name = document.querySelector('.name');
+	const navLinks = document.querySelectorAll('header.top nav a');
+	const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	const TEXT = 'Jure Kranjc';
+	const COLOR = '#131418';
+
+	let dots = [];
+	let raf = null;
+	let t0 = 0;
+	let floor = 0;
+
+	function fit() {
+		const dpr = Math.min(window.devicePixelRatio || 1, 2);
+		const w = canvas.clientWidth;
+		const h = canvas.clientHeight;
+		canvas.width = w * dpr;
+		canvas.height = h * dpr;
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+		return { w, h };
+	}
+
+	function sample() {
+		const { w, h } = fit();
+		const off = document.createElement('canvas');
+		off.width = w; off.height = h;
+		const o = off.getContext('2d');
+
+		let size = Math.min(h * 0.55, w * 0.21);
+		size = Math.max(48, Math.min(size, 200));
+		const family = 'Inter, -apple-system, BlinkMacSystemFont, sans-serif';
+		o.font = `300 ${size}px ${family}`;
+		o.textBaseline = 'middle';
+		o.textAlign = 'left';
+		o.fillStyle = '#000';
+
+		let textW = o.measureText(TEXT).width;
+		while (textW > w * 0.94 && size > 28) {
+			size -= 2;
+			o.font = `300 ${size}px ${family}`;
+			textW = o.measureText(TEXT).width;
+		}
+
+		const cy = h * 0.46;
+		o.fillText(TEXT, 0, cy);
+
+		const data = o.getImageData(0, 0, w, h).data;
+		const step = Math.max(4, Math.round(size / 20));
+		const dotSz = Math.max(2, Math.round(step * 0.62));
+
+		const targets = [];
+		for (let y = 0; y < h; y += step) {
+			for (let x = 0; x < w; x += step) {
+				const i = (y * w + x) * 4;
+				if (data[i + 3] > 128) targets.push({ x: x + step / 2, y: y + step / 2 });
+			}
+		}
+
+		const maxY = targets.reduce((m, p) => Math.max(m, p.y), 0);
+		floor = Math.min(h - 4, maxY + Math.max(step * 2.4, 18));
+
+		return { targets, dotSz, w, h };
+	}
+
+	function build() {
+		const { targets, dotSz, w } = sample();
+		const ys = targets.map(p => p.y);
+		const minY = Math.min.apply(null, ys);
+		const maxY = Math.max.apply(null, ys);
+		const span = Math.max(maxY - minY, 1);
+
+		dots = targets.map(p => {
+			const left = p.x < w / 2;
+			const margin = 80 + Math.random() * 180;
+			const sx = left ? -margin : w + margin;
+			const slide = Math.abs(p.x - sx);
+			const fromBottom = (maxY - p.y) / span;
+
+			return {
+				tx: p.x, ty: p.y,
+				sx, size: dotSz,
+				dSlide: fromBottom * 360 + Math.random() * 180,
+				tSlide: 420 + slide * 0.45 + Math.random() * 110,
+				tRise: 320 + (floor - p.y) * 1.1 + Math.random() * 50,
+			};
+		});
+
+		cancelAnimationFrame(raf);
+		t0 = performance.now();
+
+		[name, ...navLinks].forEach((el, i) => {
+			el.style.transition = 'opacity 700ms ease';
+			el.style.opacity = '0';
+		});
+		lead.style.transition = 'opacity 700ms ease, transform 700ms ease';
+		lead.style.opacity = '0';
+		lead.style.transform = 'translateY(8px)';
+
+		if (reduced) {
+			settled();
+			name.style.opacity = '1';
+			navLinks.forEach(n => n.style.opacity = '1');
+			lead.style.opacity = '1';
+			lead.style.transform = 'none';
+			return;
+		}
+
+		raf = requestAnimationFrame(step);
+
+		const last = dots.reduce((m, d) => Math.max(m, d.dSlide + d.tSlide + d.tRise), 0);
+		setTimeout(() => { name.style.opacity = '1'; }, 200);
+		navLinks.forEach((n, i) => setTimeout(() => n.style.opacity = '1', 320 + i * 70));
+		setTimeout(() => {
+			lead.style.opacity = '1';
+			lead.style.transform = 'none';
+		}, Math.max(last - 350, 1000));
+	}
+
+	function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+	function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+	function step(now) {
+		const el = now - t0;
+		const w = canvas.clientWidth;
+		const h = canvas.clientHeight;
+		ctx.clearRect(0, 0, w, h);
+
+		let busy = false;
+		ctx.fillStyle = COLOR;
+
+		for (const d of dots) {
+			const lt = el - d.dSlide;
+			if (lt < 0) { busy = true; continue; }
+
+			if (lt < d.tSlide) {
+				busy = true;
+				const t = lt / d.tSlide;
+				const e = easeOutQuart(t);
+				const x = d.sx + (d.tx - d.sx) * e;
+				ctx.fillRect(x - d.size / 2, floor - d.size / 2, d.size, d.size);
+				continue;
+			}
+
+			const rt = lt - d.tSlide;
+			if (rt < d.tRise) {
+				busy = true;
+				const t = rt / d.tRise;
+				const e = easeOutCubic(t);
+				const y = floor + (d.ty - floor) * e;
+				ctx.fillRect(d.tx - d.size / 2, y - d.size / 2, d.size, d.size);
+				continue;
+			}
+
+			ctx.fillRect(d.tx - d.size / 2, d.ty - d.size / 2, d.size, d.size);
+		}
+
+		if (busy) raf = requestAnimationFrame(step);
+	}
+
+	function settled() {
+		const w = canvas.clientWidth;
+		const h = canvas.clientHeight;
+		ctx.clearRect(0, 0, w, h);
+		ctx.fillStyle = COLOR;
+		for (const d of dots) {
+			ctx.fillRect(d.tx - d.size / 2, d.ty - d.size / 2, d.size, d.size);
+		}
+	}
+
+	let resizeT;
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeT);
+		resizeT = setTimeout(() => {
+			const { targets, dotSz } = sample();
+			dots = targets.map(p => ({ tx: p.x, ty: p.y, sx: p.x, size: dotSz, dSlide: 0, tSlide: 1, tRise: 1 }));
+			settled();
+		}, 180);
+	});
+
+	canvas.addEventListener('click', build);
+
+	if (document.fonts && document.fonts.ready) {
+		document.fonts.ready.then(build);
+	} else {
+		setTimeout(build, 80);
+	}
+})();
+</script>
+
+</body>
+</html>
