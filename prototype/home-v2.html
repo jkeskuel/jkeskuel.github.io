@@ -161,6 +161,25 @@
 		.s-body p.first { font-size: 1.25rem; }
 	}
 
+	/* Portrait */
+	.portrait {
+		float: right;
+		width: 96px;
+		height: 96px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin: 0.25rem 0 0.5rem 1.5rem;
+		filter: grayscale(0.15);
+	}
+	@media (max-width: 480px) {
+		.portrait {
+			float: none;
+			display: block;
+			margin: 0 0 1.25rem;
+			width: 84px; height: 84px;
+		}
+	}
+
 	/* ---- Work ---- */
 	.engagements {
 		list-style: none;
@@ -321,11 +340,11 @@
 
 	/* ---- Footer ---- */
 	footer.btm {
-		padding: 3rem 0 4rem;
+		padding: 2.5rem 0 3rem;
 		border-top: 1px solid var(--rule);
 		color: var(--faint);
-		font-size: 0.8125rem;
-		line-height: 1.65;
+		font-size: 0.75rem;
+		line-height: 1.55;
 	}
 	footer.btm .row {
 		display: grid;
@@ -341,6 +360,22 @@
 	footer.btm a:hover { color: var(--ink); }
 	footer.btm .end { text-align: right; }
 	@media (max-width: 540px) { footer.btm .end { text-align: left; } }
+	footer.btm details {
+		display: inline;
+	}
+	footer.btm details summary {
+		cursor: pointer;
+		list-style: none;
+		color: var(--faint);
+		transition: color 180ms ease;
+	}
+	footer.btm details summary:hover { color: var(--mute); }
+	footer.btm details summary::-webkit-details-marker { display: none; }
+	footer.btm details[open] summary { margin-bottom: 0.5rem; }
+	footer.btm details .legal {
+		padding-left: 0;
+		opacity: 0.8;
+	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.name, header.top nav a, .lead { opacity: 1 !important; transform: none !important; }
@@ -372,6 +407,7 @@
 	<div class="col">
 		<h2 class="s-head">About</h2>
 		<div class="s-body">
+			<img src="../images/JureKranjc.png" alt="Jure Kranjc" class="portrait">
 			<p class="first">I help organisations bring clarity, performance, and reliability to complex technical systems.</p>
 			<p>My work sits between databases, infrastructure, applications, and architecture. I usually get involved when systems are business-critical, performance matters, or the technical picture has become difficult to navigate.</p>
 			<p>I focus on understanding the full system, identifying the real cause of problems, and designing improvements that are technically sound, practical, and maintainable.</p>
@@ -433,9 +469,9 @@
 		<dl class="contact-row">
 			<div>
 				<dt>Direct</dt>
-				<dd><a href="mailto:jure.kranjc@aom.si">jure.kranjc@aom.si</a></dd>
+				<dd><a href="mailto:info@aom.si">info@aom.si</a></dd>
 				<dd>+386 40 807 280</dd>
-				<dd style="margin-top:0.6rem;"><a href="https://www.linkedin.com/in/jure-kranjc-8858b021a">LinkedIn</a> &nbsp;·&nbsp; <a href="https://github.com/jkeskuel/eskuel">GitHub</a></dd>
+				<dd style="margin-top:0.6rem;"><a href="https://www.linkedin.com/in/jure-kranjc-8858b021a">LinkedIn</a></dd>
 			</div>
 			<div>
 				<dt>Send a message</dt>
@@ -462,9 +498,14 @@
 <footer class="btm">
 	<div class="col-wide row">
 		<div>
-			<p>AOM, Information Engineering Jure Kranjc, s.p.</p>
-			<p>Prevalje pod Krimom 28, 1352 Preserje, Slovenia</p>
-			<p>Tax ID: SI65672429</p>
+			<details>
+				<summary>Legal information</summary>
+				<div class="legal">
+					<p>AOM, Information Engineering Jure Kranjc, s.p.</p>
+					<p>Prevalje pod Krimom 28, 1352 Preserje, Slovenia</p>
+					<p>Tax ID: SI65672429</p>
+				</div>
+			</details>
 		</div>
 		<div class="end">
 			<p>&copy; <span id="y">2026</span> Jure Kranjc</p>
