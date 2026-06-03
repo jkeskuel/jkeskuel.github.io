@@ -1,165 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<title>Jure Kranjc — AOM SQL</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Independent SQL Server consultant. Performance, high availability, migrations — done without the corporate theatre." />
-	<meta name="author" content="Jure Kranjc" />
-	<meta property="og:title" content="Jure Kranjc — AOM SQL">
-	<meta property="og:description" content="Independent SQL Server consultant. Performance, HA, migrations.">
-	<meta property="og:url" content="https://www.aom.si">
-	<meta name="twitter:card" content="summary">
-	<link rel="icon" href="/images/favicon.png" type="image/png">
-	<link rel="stylesheet" href="assets/css/site.css">
+<meta charset="utf-8" />
+<title>Jure Kranjc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Independent technical consultant. I help organisations bring clarity, performance, and reliability to complex systems." />
+<meta name="author" content="Jure Kranjc" />
+<meta property="og:title" content="Jure Kranjc">
+<meta property="og:description" content="Independent technical consultant. Database systems, infrastructure, and architecture.">
+<meta property="og:url" content="https://www.aom.si">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
 
-	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBENTHRG3T"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-YBENTHRG3T');
-	</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBENTHRG3T"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-YBENTHRG3T');
+</script>
 </head>
 <body>
 
-	<header class="site">
-		<div class="wrap">
-			<a class="brand" href="/">Jure Kranjc</a>
-			<nav>
-				<a href="#about">About</a>
-				<a href="#services">Services</a>
-				<a href="#notes">Notes</a>
-				<a href="#contact">Contact</a>
-			</nav>
-		</div>
-	</header>
+<header class="top">
+	<div class="col-wide row nav-only">
+		<nav>
+			<a href="#work">Work</a>
+			<a href="/writing/">Writing</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</div>
+</header>
 
-	<section class="hero">
-		<div class="wrap">
-			<h1>Making databases fast, reliable, and boring.</h1>
-			<p class="lede">Independent SQL Server consultant based in Slovenia. I help teams keep their data layer out of the way of everything else.</p>
-		</div>
-	</section>
+<section class="hero">
+	<div class="col-wide">
+		<canvas id="wordmark" aria-label="Jure Kranjc" role="img" title="Click to replay"></canvas>
+		<p class="lead">Independent technical consultant. Database systems, infrastructure, and architecture.</p>
+	</div>
+</section>
 
-	<section class="block" id="about">
-		<div class="wrap">
-			<h2>About</h2>
-			<div class="about">
-				<img src="images/JureKranjc.png" alt="Jure Kranjc" class="avatar">
-				<div class="bio">
-					<p>I've been working with SQL Server for the better part of two decades — government, finance, utilities, the usual suspects. Most of what I do is unglamorous: tune the slow query, untangle the HA setup, plan the migration so nobody calls anyone at 3 a.m.</p>
-					<p>I work independently, by the hour or by the project. No sales pitch, no decks, no "synergies". If your databases are misbehaving or you just want a second pair of eyes, get in touch.</p>
-				</div>
+<section class="s" id="about">
+	<div class="col">
+		<h2 class="s-head">About</h2>
+		<div class="s-body">
+			<img src="/images/JureKranjc.png" alt="Jure Kranjc" class="portrait">
+			<p class="first">I help organisations bring clarity, performance, and reliability to complex technical systems.</p>
+			<p>My work sits between databases, infrastructure, applications, and architecture. I usually get involved when systems are business-critical, performance matters, or the technical picture has become difficult to navigate.</p>
+			<p>I focus on understanding the full system, identifying the real cause of problems, and designing improvements that are technically sound, practical, and maintainable.</p>
+		</div>
+	</div>
+</section>
+
+<section class="s" id="work">
+	<div class="col">
+		<h2 class="s-head">Engagements</h2>
+		<p class="nda-note">Work performed under NDA; descriptions are intentionally non-specific.</p>
+		<ul class="engagements">
+			<li>
+				<div class="who"><img src="/images/ELES-logo.png" alt="ELES"><span class="nm">ELES</span></div>
+				<div class="what">National electricity transmission system operator. Long-running database reliability and performance work on grid-critical systems.</div>
+			</li>
+			<li>
+				<div class="who"><img src="/images/FURS-logo.png" alt="FURS"><span class="nm">FURS</span></div>
+				<div class="what">Slovenian Financial Administration. Database architecture and tuning across tax and customs systems.</div>
+			</li>
+			<li>
+				<div class="who"><img src="/images/MORS-logo.jpg" alt="MORS"><span class="nm">MORS</span></div>
+				<div class="what">Ministry of Defence. Consulting on operational database systems.</div>
+			</li>
+			<li>
+				<div class="who"><img src="/images/mikrocop_logo.svg" alt="Mikrocop"><span class="nm">Mikrocop</span></div>
+				<div class="what">Document management and digital archival services. Performance, migrations, and platform work.</div>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="s" id="credentials">
+	<div class="col">
+		<h2 class="s-head">Credentials</h2>
+		<ul class="creds">
+			<li><a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url">MCSE — Data Management &amp; Analytics</a></li>
+			<li><a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url">MCSA — SQL Server 2016</a></li>
+			<li><a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url">Oracle Certified Professional 19c</a></li>
+			<li><a href="https://www.credly.com/badges/4c163d16-5163-489d-90fd-3ebca84122a4/public_url">Microsoft Certified: Azure Data Engineer Associate</a></li>
+		</ul>
+	</div>
+</section>
+
+<section class="s" id="writing">
+	<div class="col writing-teaser">
+		<h2 class="s-head">Writing</h2>
+		<p>Occasional notes from the field. No schedule, no newsletter — I post when something feels worth writing down.</p>
+		<p class="more"><a href="/writing/">Read the archive →</a></p>
+	</div>
+</section>
+
+<section class="s" id="contact">
+	<div class="col">
+		<h2 class="s-head">Contact</h2>
+		<dl class="contact-row">
+			<div>
+				<dt>Direct</dt>
+				<dd><a href="mailto:info@aom.si">info@aom.si</a></dd>
+				<dd>+386 40 807 280</dd>
+				<dd style="margin-top:0.6rem;"><a href="https://www.linkedin.com/in/jure-kranjc-8858b021a">LinkedIn</a></dd>
 			</div>
-		</div>
-	</section>
-
-	<section class="block" id="services">
-		<div class="wrap">
-			<h2>What I do</h2>
-			<ul class="services">
-				<li><strong>Performance tuning.</strong> <span>Queries, indexes, schemas, the occasional bad ORM decision.</span></li>
-				<li><strong>High availability & DR.</strong> <span>Always On, log shipping, failover clusters — designed so they actually work when you need them.</span></li>
-				<li><strong>Migrations.</strong> <span>Version upgrades, consolidations, on-prem to cloud. Boring is the goal.</span></li>
-				<li><strong>Cost & licensing review.</strong> <span>You're probably overpaying somewhere. Let's find out where.</span></li>
-				<li><strong>Dev support.</strong> <span>Helping app teams write data layers that age well.</span></li>
-				<li><strong>DevOps for databases.</strong> <span>Schema in source control, pipelines, repeatable deployments.</span></li>
-				<li><strong>Mentoring.</strong> <span>One-on-one or small team. I'd rather teach you than sell you a retainer.</span></li>
-			</ul>
-		</div>
-	</section>
-
-	<section class="block" id="certs">
-		<div class="wrap">
-			<h2>Certifications</h2>
-			<ul class="certs">
-				<li><a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url">MCSE — Data Management & Analytics</a></li>
-				<li><a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url">MCSA — SQL Server 2016</a></li>
-				<li><a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url">Oracle Certified Professional 19c</a></li>
-				<li><a href="https://www.credly.com/badges/4c163d16-5163-489d-90fd-3ebca84122a4/public_url">Microsoft Certified: Azure Data Engineer Associate</a></li>
-			</ul>
-			<div class="badges">
-				<a href="https://www.credly.com/badges/3113944a-7a19-48df-9f26-9f973e8d08dd/public_url" target="_blank" rel="noopener"><img src="images/MCSE.png" alt="MCSE badge"></a>
-				<a href="https://www.credly.com/badges/2c128f72-0509-4a21-8678-1d15f9472b35/public_url" target="_blank" rel="noopener"><img src="images/MCSA.png" alt="MCSA badge"></a>
-				<a href="https://www.credly.com/badges/46cde919-de51-4329-b1b2-ef800081140c/public_url" target="_blank" rel="noopener"><img src="images/ORA.png" alt="Oracle 19c badge"></a>
+			<div>
+				<dt>Send a message</dt>
+				<form id="msg" class="send">
+					<div>
+						<label for="m-name">Name</label>
+						<input type="text" name="from_name" id="m-name" required />
+					</div>
+					<div>
+						<label for="m-email">Email</label>
+						<input type="email" name="reply_to" id="m-email" required />
+					</div>
+					<div>
+						<label for="m-body">Message</label>
+						<textarea name="message" id="m-body" rows="3" required></textarea>
+					</div>
+					<button type="submit">Send</button>
+				</form>
 			</div>
-		</div>
-	</section>
+		</dl>
+	</div>
+</section>
 
-	<section class="block" id="notes">
-		<div class="wrap">
-			<h2>Notes</h2>
-			<p>Occasional write-ups from the field. No newsletter, no schedule — just whatever I felt worth writing down.</p>
-			<ul class="notes">
-				<li class="empty"><span>Nothing here yet. Check back.</span></li>
-			</ul>
-		</div>
-	</section>
-
-	<section class="block" id="contact">
-		<div class="wrap">
-			<h2>Contact</h2>
-			<div class="contact-grid">
-				<div>
-					<h3>Direct</h3>
-					<p><a href="mailto:jure.kranjc@aom.si">jure.kranjc@aom.si</a></p>
-					<p>+386 40 807 280</p>
-					<p style="margin-top:14px;">
-						<a href="https://www.linkedin.com/in/jure-kranjc-8858b021a">LinkedIn</a> ·
-						<a href="https://github.com/jkeskuel/eskuel">GitHub</a>
-					</p>
-					<h3 style="margin-top:24px;">Business</h3>
+<footer class="btm">
+	<div class="col-wide row">
+		<div>
+			<details>
+				<summary>Legal information</summary>
+				<div class="legal">
 					<p>AOM, Information Engineering Jure Kranjc, s.p.</p>
 					<p>Prevalje pod Krimom 28, 1352 Preserje, Slovenia</p>
 					<p>Tax ID: SI65672429</p>
 				</div>
-				<div>
-					<h3>Drop a line</h3>
-					<form id="contact-form" class="contact">
-						<div>
-							<label for="name">Name</label>
-							<input type="text" name="from_name" id="name" required />
-						</div>
-						<div>
-							<label for="email">Email</label>
-							<input type="email" name="reply_to" id="email" required />
-						</div>
-						<div>
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4" required></textarea>
-						</div>
-						<button type="submit">Send</button>
-					</form>
-				</div>
-			</div>
+			</details>
 		</div>
-	</section>
-
-	<footer class="site">
-		<div class="wrap">
-			<span>&copy; Jure Kranjc</span>
-			<span><a href="mailto:jure.kranjc@aom.si">jure.kranjc@aom.si</a></span>
+		<div class="end">
+			<p>&copy; <span id="y">2026</span> Jure Kranjc</p>
 		</div>
-	</footer>
+	</div>
+</footer>
 
-	<!-- EmailJS -->
-	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-	<script>
-		(function(){ emailjs.init("T491ObZb_kHykk6_M"); })();
-		document.getElementById("contact-form").addEventListener("submit", function(event) {
-			event.preventDefault();
-			emailjs.sendForm("service_qg0k0um", "template_jc2723j", this)
-				.then(() => {
-					alert("Message sent. I'll get back to you.");
-					this.reset();
-				}, (error) => {
-					console.error("EmailJS error:", error);
-					alert("Couldn't send — try emailing jure.kranjc@aom.si directly.");
-				});
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+	(function(){ emailjs.init("T491ObZb_kHykk6_M"); })();
+	document.getElementById("msg").addEventListener("submit", function(e) {
+		e.preventDefault();
+		emailjs.sendForm("service_qg0k0um", "template_jc2723j", this)
+			.then(() => { alert("Sent. I'll be in touch."); this.reset(); },
+				  (err) => { console.error(err); alert("Couldn't send — please email info@aom.si directly."); });
+	});
+	document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+<script>
+/* Hero wordmark: blocks slide in along the floor, then rise into the name. */
+(function () {
+	const canvas = document.getElementById('wordmark');
+	const ctx = canvas.getContext('2d');
+	const lead = document.querySelector('.lead');
+	const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	const TEXT = 'Jure Kranjc';
+	const COLOR = '#131418';
+
+	let dots = [];
+	let raf = null;
+	let t0 = 0;
+	let floor = 0;
+
+	function fit() {
+		const dpr = Math.min(window.devicePixelRatio || 1, 2);
+		const w = canvas.clientWidth;
+		const h = canvas.clientHeight;
+		canvas.width = w * dpr;
+		canvas.height = h * dpr;
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+		return { w, h };
+	}
+
+	function sample() {
+		const { w, h } = fit();
+		const off = document.createElement('canvas');
+		off.width = w; off.height = h;
+		const o = off.getContext('2d');
+
+		let size = Math.min(h * 0.55, w * 0.21);
+		size = Math.max(48, Math.min(size, 200));
+		const family = 'Inter, -apple-system, BlinkMacSystemFont, sans-serif';
+		o.font = `300 ${size}px ${family}`;
+		o.textBaseline = 'middle';
+		o.textAlign = 'left';
+		o.fillStyle = '#000';
+
+		let textW = o.measureText(TEXT).width;
+		while (textW > w * 0.94 && size > 28) {
+			size -= 2;
+			o.font = `300 ${size}px ${family}`;
+			textW = o.measureText(TEXT).width;
+		}
+
+		const cy = h * 0.46;
+		o.fillText(TEXT, 0, cy);
+
+		const data = o.getImageData(0, 0, w, h).data;
+		const step = Math.max(4, Math.round(size / 20));
+		const dotSz = Math.max(2, Math.round(step * 0.62));
+
+		const targets = [];
+		for (let y = 0; y < h; y += step) {
+			for (let x = 0; x < w; x += step) {
+				const i = (y * w + x) * 4;
+				if (data[i + 3] > 128) targets.push({ x: x + step / 2, y: y + step / 2 });
+			}
+		}
+
+		const maxY = targets.reduce((m, p) => Math.max(m, p.y), 0);
+		floor = Math.min(h - 4, maxY + Math.max(step * 2.4, 18));
+
+		return { targets, dotSz, w, h };
+	}
+
+	function build() {
+		const { targets, dotSz, w } = sample();
+		const ys = targets.map(p => p.y);
+		const minY = Math.min.apply(null, ys);
+		const maxY = Math.max.apply(null, ys);
+		const span = Math.max(maxY - minY, 1);
+
+		dots = targets.map(p => {
+			const left = p.x < w / 2;
+			const margin = 80 + Math.random() * 180;
+			const sx = left ? -margin : w + margin;
+			const slide = Math.abs(p.x - sx);
+			const fromBottom = (maxY - p.y) / span;
+
+			return {
+				tx: p.x, ty: p.y,
+				sx, size: dotSz,
+				dSlide: fromBottom * 360 + Math.random() * 180,
+				tSlide: 420 + slide * 0.45 + Math.random() * 110,
+				tRise: 320 + (floor - p.y) * 1.1 + Math.random() * 50,
+			};
 		});
-	</script>
+
+		cancelAnimationFrame(raf);
+		t0 = performance.now();
+
+		lead.style.transition = 'opacity 700ms ease, transform 700ms ease';
+		lead.style.opacity = '0';
+		lead.style.transform = 'translateY(8px)';
+
+		if (reduced) {
+			settled();
+			lead.style.opacity = '1';
+			lead.style.transform = 'none';
+			return;
+		}
+
+		raf = requestAnimationFrame(step);
+		const last = dots.reduce((m, d) => Math.max(m, d.dSlide + d.tSlide + d.tRise), 0);
+		setTimeout(() => {
+			lead.style.opacity = '1';
+			lead.style.transform = 'none';
+		}, Math.max(last - 350, 1000));
+	}
+
+	function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+	function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+	function step(now) {
+		const el = now - t0;
+		const w = canvas.clientWidth;
+		const h = canvas.clientHeight;
+		ctx.clearRect(0, 0, w, h);
+
+		let busy = false;
+		ctx.fillStyle = COLOR;
+
+		for (const d of dots) {
+			const lt = el - d.dSlide;
+			if (lt < 0) { busy = true; continue; }
+
+			if (lt < d.tSlide) {
+				busy = true;
+				const t = lt / d.tSlide;
+				const e = easeOutQuart(t);
+				const x = d.sx + (d.tx - d.sx) * e;
+				ctx.fillRect(x - d.size / 2, floor - d.size / 2, d.size, d.size);
+				continue;
+			}
+
+			const rt = lt - d.tSlide;
+			if (rt < d.tRise) {
+				busy = true;
+				const t = rt / d.tRise;
+				const e = easeOutCubic(t);
+				const y = floor + (d.ty - floor) * e;
+				ctx.fillRect(d.tx - d.size / 2, y - d.size / 2, d.size, d.size);
+				continue;
+			}
+
+			ctx.fillRect(d.tx - d.size / 2, d.ty - d.size / 2, d.size, d.size);
+		}
+
+		if (busy) raf = requestAnimationFrame(step);
+	}
+
+	function settled() {
+		const w = canvas.clientWidth;
+		const h = canvas.clientHeight;
+		ctx.clearRect(0, 0, w, h);
+		ctx.fillStyle = COLOR;
+		for (const d of dots) {
+			ctx.fillRect(d.tx - d.size / 2, d.ty - d.size / 2, d.size, d.size);
+		}
+	}
+
+	let resizeT;
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeT);
+		resizeT = setTimeout(() => {
+			const { targets, dotSz } = sample();
+			dots = targets.map(p => ({ tx: p.x, ty: p.y, sx: p.x, size: dotSz, dSlide: 0, tSlide: 1, tRise: 1 }));
+			settled();
+		}, 180);
+	});
+
+	canvas.addEventListener('click', build);
+
+	if (document.fonts && document.fonts.ready) {
+		document.fonts.ready.then(build);
+	} else {
+		setTimeout(build, 80);
+	}
+})();
+</script>
 
 </body>
 </html>

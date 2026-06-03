@@ -9,183 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-	:root {
-		--bg: #faf9f5;
-		--ink: #131418;
-		--text: #2a2c30;
-		--mute: #5a5d63;
-		--faint: #9b9ea4;
-		--rule: #e6e2d6;
-		--mark: #8c3a1d;
-		--read: 38rem;
-		--wide: 62rem;
-	}
-	* { box-sizing: border-box; }
-	html { scroll-behavior: smooth; }
-	html, body {
-		margin: 0; padding: 0;
-		background: var(--bg);
-		color: var(--text);
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-		font-size: 17px;
-		line-height: 1.65;
-		font-feature-settings: "ss01", "cv11", "cv05";
-		-webkit-font-smoothing: antialiased;
-	}
-	::selection { background: var(--ink); color: var(--bg); }
-
-	a {
-		color: var(--ink);
-		text-decoration: none;
-		border-bottom: 1px solid var(--rule);
-		padding-bottom: 1px;
-		transition: border-color 180ms ease;
-	}
-	a:hover { border-bottom-color: var(--ink); }
-
-	.col { max-width: var(--read); margin: 0 auto; padding: 0 1.5rem; }
-	.col-wide { max-width: var(--wide); margin: 0 auto; padding: 0 1.5rem; }
-
-	header.top { padding: 1.75rem 0 0; }
-	header.top .row { display: flex; align-items: center; justify-content: space-between; }
-	.name {
-		font-weight: 500; font-size: 0.95rem; letter-spacing: -0.005em;
-		color: var(--ink); border: 0; display: inline-flex; align-items: baseline; gap: 0.25rem;
-	}
-	.name .pip {
-		width: 5px; height: 5px; background: var(--mark);
-		border-radius: 50%; display: inline-block; transform: translateY(-1px);
-	}
-	header.top nav { display: flex; gap: 1.5rem; }
-	header.top nav a { font-size: 0.8125rem; color: var(--mute); border: 0; }
-	header.top nav a:hover { color: var(--ink); }
-
-	article {
-		padding: 4rem 0 3rem;
-	}
-	@media (max-width: 720px) { article { padding: 3rem 0 2rem; } }
-
-	.crumb {
-		font-size: 0.8125rem;
-		color: var(--mute);
-		border: 0;
-		display: inline-block;
-		margin-bottom: 2rem;
-	}
-	.crumb:hover { color: var(--ink); }
-
-	article h1 {
-		font-weight: 400;
-		font-size: 1.875rem;
-		letter-spacing: -0.015em;
-		line-height: 1.2;
-		margin: 0 0 0.5rem;
-		color: var(--ink);
-	}
-	@media (min-width: 720px) {
-		article h1 { font-size: 2.25rem; }
-	}
-	article time {
-		font-size: 0.8125rem;
-		color: var(--faint);
-		font-variant-numeric: tabular-nums;
-		letter-spacing: 0.04em;
-	}
-
-	article .body {
-		margin-top: 2.5rem;
-	}
-	article .body p {
-		margin: 0 0 1.25rem;
-		font-size: 1.0625rem;
-		color: var(--text);
-		line-height: 1.7;
-	}
-	article .body p.lede {
-		font-size: 1.1875rem;
-		color: var(--ink);
-		line-height: 1.5;
-		margin-bottom: 1.5rem;
-	}
-	article .body h2 {
-		font-weight: 500;
-		font-size: 1.1875rem;
-		margin: 2.5rem 0 0.75rem;
-		color: var(--ink);
-		letter-spacing: -0.005em;
-	}
-	article .body h3 {
-		font-weight: 500;
-		font-size: 1rem;
-		margin: 2rem 0 0.5rem;
-		color: var(--ink);
-	}
-	article .body ul, article .body ol {
-		padding-left: 1.5rem;
-		margin: 0 0 1.25rem;
-	}
-	article .body li { margin-bottom: 0.5rem; font-size: 1.0625rem; color: var(--text); }
-	article .body blockquote {
-		margin: 1.5rem 0;
-		padding: 0 0 0 1.25rem;
-		border-left: 2px solid var(--rule);
-		color: var(--mute);
-		font-style: normal;
-	}
-	article .body code {
-		background: #ebe7d8;
-		padding: 0.1em 0.4em;
-		border-radius: 3px;
-		font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-		font-size: 0.875em;
-		color: var(--ink);
-	}
-	article .body pre {
-		background: #1f2126;
-		color: #e6e2d6;
-		padding: 1rem 1.25rem;
-		border-radius: 4px;
-		overflow-x: auto;
-		font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
-		font-size: 0.875rem;
-		line-height: 1.6;
-		margin: 1.5rem 0;
-	}
-	article .body pre code {
-		background: transparent;
-		color: inherit;
-		padding: 0;
-	}
-	article .body hr {
-		border: 0;
-		border-top: 1px solid var(--rule);
-		margin: 2.5rem 0;
-	}
-
-	footer.btm {
-		padding: 2.5rem 0 3rem;
-		border-top: 1px solid var(--rule);
-		color: var(--faint);
-		font-size: 0.75rem;
-		line-height: 1.55;
-		margin-top: 4rem;
-	}
-	footer.btm .row { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: end; }
-	@media (max-width: 540px) { footer.btm .row { grid-template-columns: 1fr; } }
-	footer.btm p { margin: 0; }
-	footer.btm a { color: var(--mute); border: 0; }
-	footer.btm a:hover { color: var(--ink); }
-	footer.btm .end { text-align: right; }
-	@media (max-width: 540px) { footer.btm .end { text-align: left; } }
-	footer.btm details summary {
-		cursor: pointer; list-style: none; color: var(--faint);
-		transition: color 180ms ease;
-	}
-	footer.btm details summary:hover { color: var(--mute); }
-	footer.btm details summary::-webkit-details-marker { display: none; }
-	footer.btm details[open] summary { margin-bottom: 0.5rem; }
-</style>
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
 
@@ -200,7 +24,7 @@
 	</div>
 </header>
 
-<article>
+<article class="post">
 	<div class="col">
 		<a href="/writing/" class="crumb">← Writing</a>
 		<h1>Post title goes here</h1>
@@ -219,12 +43,12 @@ ORDER BY total_worker_time DESC;</code></pre>
 	</div>
 </article>
 
-<footer class="btm">
+<footer class="btm has-top">
 	<div class="col-wide row">
 		<div>
 			<details>
 				<summary>Legal information</summary>
-				<div>
+				<div class="legal">
 					<p>AOM, Information Engineering Jure Kranjc, s.p.</p>
 					<p>Prevalje pod Krimom 28, 1352 Preserje, Slovenia</p>
 					<p>Tax ID: SI65672429</p>
