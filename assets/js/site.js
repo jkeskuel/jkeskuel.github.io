@@ -120,10 +120,59 @@
 			};
 		});
 
+		// Re-draws the clean text into the visible canvas using the exact
+		// same font/baseline/coordinates used when sampling. Result lands
+		// pixel-perfectly on top of where the assembled dots sat.
+		function drawText(targetCtx) {
+			targetCtx.font = `${fontWeight} ${fontSize}px ${family}`;
+			targetCtx.textBaseline = 'middle';
+			targetCtx.textAlign = 'left';
+			targetCtx.fillStyle = color;
+			if (supportsLS) {
+				targetCtx.letterSpacing = `${letterSpacing}px`;
+				targetCtx.fillText(text, paddingX, yC);
+			} else {
+				let cursor = paddingX;
+				for (const ch of text) {
+					targetCtx.fillText(ch, cursor, yC);
+					cursor += targetCtx.measureText(ch).width + letterSpacing;
+				}
+			}
+		}
+
 		let raf = null;
 		let t0 = 0;
 		function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 		function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+		const TRANSITION_MS = 380;
+		const TRANSITION_DELAY = 80;
+
+		function morph(now, morphStart) {
+			const t = Math.min(1, (now - morphStart) / TRANSITION_MS);
+			ctx.clearRect(0, 0, cssW, cssH);
+
+			// Particles fading out
+			ctx.globalAlpha = 1 - t;
+			ctx.fillStyle = color;
+			for (const d of dots) {
+				ctx.fillRect(d.tx - d.size / 2, d.ty - d.size / 2, d.size, d.size);
+			}
+
+			// Clean text fading in (same position, identical coordinates)
+			ctx.globalAlpha = t;
+			drawText(ctx);
+
+			ctx.globalAlpha = 1;
+
+			if (t < 1) {
+				raf = requestAnimationFrame((n) => morph(n, morphStart));
+			} else {
+				ctx.clearRect(0, 0, cssW, cssH);
+				drawText(ctx);
+				if (onDoneCb) { const cb = onDoneCb; onDoneCb = null; cb(); }
+			}
+		}
 
 		function frame(now) {
 			const el = now - t0;
@@ -155,8 +204,17 @@
 
 				ctx.fillRect(d.tx - d.size / 2, d.ty - d.size / 2, d.size, d.size);
 			}
-			if (busy) raf = requestAnimationFrame(frame);
-			else if (onDoneCb) { const cb = onDoneCb; onDoneCb = null; cb(); }
+
+			if (busy) {
+				raf = requestAnimationFrame(frame);
+			} else {
+				// Particles done — kick off the in-canvas morph to clean text.
+				const morphStart = performance.now() + TRANSITION_DELAY;
+				raf = requestAnimationFrame(function wait(n) {
+					if (n < morphStart) raf = requestAnimationFrame(wait);
+					else morph(n, morphStart);
+				});
+			}
 		}
 
 		let onDoneCb = null;
@@ -185,10 +243,10 @@
 			canvas.setAttribute('aria-hidden', 'true');
 			h.appendChild(canvas);
 
-			const finalText = document.createElement('span');
-			finalText.className = 'text-final';
-			finalText.textContent = raw;
-			h.appendChild(finalText);
+			const sr = document.createElement('span');
+			sr.className = 'sr-only';
+			sr.textContent = raw;
+			h.appendChild(sr);
 
 			const instance = pixelize(canvas, text, {
 				fontSize: 14,
@@ -223,9 +281,7 @@
 					e.target.classList.add('in');
 					const head = e.target.querySelector('.s-head');
 					const instance = head ? headInstances.get(head) : null;
-					if (instance) {
-						instance.play(() => head.classList.add('settled'));
-					}
+					if (instance) instance.play();
 				}, i * 280);
 			});
 		}, {
