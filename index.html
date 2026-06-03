@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/site.js" defer></script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YBENTHRG3T"></script>
@@ -265,6 +266,7 @@
 			settled();
 			lead.style.opacity = '1';
 			lead.style.transform = 'none';
+			window.dispatchEvent(new CustomEvent('hero-done'));
 			return;
 		}
 
@@ -273,6 +275,7 @@
 		setTimeout(() => {
 			lead.style.opacity = '1';
 			lead.style.transform = 'none';
+			window.dispatchEvent(new CustomEvent('hero-done'));
 		}, Math.max(last - 350, 1000));
 	}
 
