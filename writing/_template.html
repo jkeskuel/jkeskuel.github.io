@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Post title — Jure Kranjc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="A one-sentence summary of this note." />
+<link rel="icon" href="/images/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="top">
+	<div class="col-wide row">
+		<a href="/" class="name">Jure Kranjc<span class="pip"></span></a>
+		<nav>
+			<a href="/#work">Work</a>
+			<a href="/writing/">Writing</a>
+			<a href="/#contact">Contact</a>
+		</nav>
+	</div>
+</header>
+
+<article class="post">
+	<div class="col">
+		<a href="/writing/" class="crumb">← Writing</a>
+		<h1>Post title goes here</h1>
+		<time datetime="2026-06-03">June 2026</time>
+		<div class="body">
+			<p class="lede">Opening sentence — the single line that says what this note is about.</p>
+			<p>First paragraph of real content.</p>
+			<h2>A section heading</h2>
+			<p>Body paragraph.</p>
+			<p>Another paragraph with <code>some_inline_code()</code> and an <a href="https://example.com">external link</a>.</p>
+			<pre><code>SELECT TOP 10 *
+FROM sys.dm_exec_query_stats
+ORDER BY total_worker_time DESC;</code></pre>
+			<p>Closing thought.</p>
+		</div>
+	</div>
+</article>
+
+<footer class="btm has-top">
+	<div class="col-wide row">
+		<div>
+			<details>
+				<summary>Legal information</summary>
+				<div class="legal">
+					<p>AOM, Information Engineering Jure Kranjc, s.p.</p>
+					<p>Prevalje pod Krimom 28, 1352 Preserje, Slovenia</p>
+					<p>Tax ID: SI65672429</p>
+				</div>
+			</details>
+		</div>
+		<div class="end">
+			<p>&copy; <span id="y">2026</span> Jure Kranjc</p>
+		</div>
+	</div>
+</footer>
+
+<script>
+	document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
