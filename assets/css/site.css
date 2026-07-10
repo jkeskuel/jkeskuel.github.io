@@ -338,53 +338,13 @@ section.s.in .creds li:nth-child(4) { transition-delay: 710ms; }
 	color: var(--text);
 }
 .contact-row a { color: var(--ink); }
-
-form.send {
-	display: grid;
-	gap: 0.9rem;
-	margin-top: 1.25rem;
-}
-form.send label {
-	font-size: 0.6875rem;
-	font-weight: 500;
-	letter-spacing: 0.18em;
-	text-transform: uppercase;
+.contact-row .no-form {
+	margin-top: 1.4rem;
+	font-size: 0.8125rem;
 	color: var(--faint);
-	display: block;
-	margin-bottom: 0.35rem;
+	max-width: 26rem;
+	line-height: 1.6;
 }
-form.send input, form.send textarea {
-	width: 100%;
-	padding: 0.5rem 0;
-	font: inherit;
-	font-size: 0.9375rem;
-	color: var(--ink);
-	background: transparent;
-	border: 0;
-	border-bottom: 1px solid var(--rule);
-	outline: none;
-	transition: border-color 180ms ease;
-	font-feature-settings: inherit;
-}
-form.send input:focus, form.send textarea:focus { border-bottom-color: var(--ink); }
-form.send textarea { resize: vertical; min-height: 4.5rem; line-height: 1.5; }
-form.send button {
-	justify-self: start;
-	margin-top: 0.5rem;
-	font: inherit;
-	font-size: 0.75rem;
-	font-weight: 500;
-	letter-spacing: 0.18em;
-	text-transform: uppercase;
-	padding: 0.7rem 1.4rem;
-	background: var(--ink);
-	color: var(--bg);
-	border: 0;
-	border-radius: 2px;
-	cursor: pointer;
-	transition: background 180ms ease;
-}
-form.send button:hover { background: var(--mark); }
 
 /* ---- Writing page ---- */
 main.page { padding: 5rem 0 4rem; }
